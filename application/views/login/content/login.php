@@ -30,7 +30,7 @@
 							Don’t have an account?
 						</span>
 
-						<a class="txt2" href="<?php echo base_url('test_control_register')?>">
+						<a class="txt2" href=<?=base_url("Auth/registerForm")?>>
 							Sign Up
 						</a>
 					</div>

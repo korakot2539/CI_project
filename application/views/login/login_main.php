@@ -5,8 +5,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <?php echo link_tag('asset/login/css/util.css'); ?>
-    <?php echo link_tag('asset/login/css/main.css'); ?>
+    <link href="<?=base_url('asset/')?>login/css/util.css" rel="stylesheet">
+    <link href="<?=base_url('asset/')?>login/css/main.css" rel="stylesheet">
+
 
 </head>
 <body>

@@ -9,22 +9,49 @@ class Auth extends CI_Controller {
         $this->load->helper("url");
     }
 
+    function loginForm()
+    {
+        $data["content"]="login/content/login";
+        $this->load->view("login/login_main",$data);	
+    }
+
     function login()
     {
+        /*
+        $userdata  = $this->User_model->getOne($user);
+        if($userdata!="")
+        {
+            if($userdata->password==$password)
+            {
+                complete;
+                redirect(main);
+            }
+        }
+        incomplete;
+        redirect(login);
 
+        */
     }
     
-    function jwt($user)
+    function jwt()
     {
         
     }
 
     function logout()
     {
-        redirect();
+        /*
+        redirect(main);
+        */
     }
 
-    function signup()
+    function registerForm()
+    {
+        $data["content"]="login/content/register";
+        $this->load->view("login/login_main",$data);	
+    }
+
+    function register()
     {
         
     }

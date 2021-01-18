@@ -7,7 +7,7 @@
 					<div class="col-12">
 						<div class="header__content">
 							<!-- header logo -->
-							<a href="index.html" class="header__logo">
+							<a href=<?=base_url()?> class="header__logo">
 								<img src="img/logo.svg" alt="">
 							</a>
 							<!-- end header logo -->
@@ -15,15 +15,15 @@
 							<!-- header nav -->
 							<ul class="header__nav">
 								<li class="header__nav-item">
-									<a class="header__nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+									<a class="header__nav-link" href=<?=base_url()?> role="button" aria-haspopup="true" aria-expanded="false">Home</a>
 								</li>
 
 								<li class="header__nav-item">
-									<a class="header__nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">History</a>
+									<a class="header__nav-link" href=<?=base_url()?> role="button" aria-haspopup="true" aria-expanded="false">History</a>
 								</li>
 
 								<li class="header__nav-item">
-									<a class="header__nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+									<a class="header__nav-link" href=<?=base_url()?> role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
 								</li>
 
 							</ul>
@@ -35,7 +35,7 @@
 									<i class="icon ion-ios-search"></i>
 								</button>
 
-								<a href="signin.html" class="header__sign-in">
+								<a href=<?=base_url("Auth/loginForm")?> class="header__sign-in">
 									<i class="icon ion-ios-log-in"></i>
 									<span>sign in</span>
 								</a>

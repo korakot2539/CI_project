@@ -11,8 +11,7 @@ class Home extends CI_Controller
 	public function index()
 	{
         $data["content"] = "home/content/home";
-		$this->load->view('home/home_main',$data);		
+		$this->load->view('home/home_main',$data);
 	}
 	
 }
-

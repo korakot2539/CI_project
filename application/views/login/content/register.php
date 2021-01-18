@@ -36,7 +36,7 @@
                     </div>
 				</form>
                 <div class="text-left p-t-20">
-					<a class="txt2" href="<?php echo base_url('test_control_login')?>">
+					<a class="txt2" href=<?=base_url("Auth/loginForm")?>>
 						Back
 					</a>
 				</div>

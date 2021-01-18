@@ -23,17 +23,17 @@ class Movie extends CI_Controller
 
 	}
 
-	public function editForm($province_id)
+	public function editForm()
 	{
 
 	}
 
-	public function editSave($province_id)
+	public function editSave()
 	{
 
 	}
 
-	public function delete($province_id)
+	public function delete()
 	{
 
 	}
