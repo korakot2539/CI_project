@@ -6,11 +6,14 @@ class Movie extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();	
+
+		$this->load->model('Product_model');
 	}
 
 	public function index()
 	{
 		$this->load->view('selected/selected_main',$data);		 
+	
 	}
 
 	public function addForm()
