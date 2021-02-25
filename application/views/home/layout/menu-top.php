@@ -8,6 +8,7 @@
 						<div class="header__content">
 							<!-- header logo -->
 							<a href=<?=base_url()?> class="header__logo">
+							<a href="index.html" class="header__logo">
 								<img src="img/logo.svg" alt="">
 							</a>
 							<!-- end header logo -->
@@ -24,6 +25,15 @@
 
 								<li class="header__nav-item">
 									<a class="header__nav-link" href=<?=base_url()?> role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+									<a class="header__nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+								</li>
+
+								<li class="header__nav-item">
+									<a class="header__nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">History</a>
+								</li>
+
+								<li class="header__nav-item">
+									<a class="header__nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
 								</li>
 
 							</ul>
@@ -36,6 +46,7 @@
 								</button>
 
 								<a href=<?=base_url("Auth/loginForm")?> class="header__sign-in">
+								<a href="signin.html" class="header__sign-in">
 									<i class="icon ion-ios-log-in"></i>
 									<span>sign in</span>
 								</a>

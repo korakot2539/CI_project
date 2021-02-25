@@ -3,6 +3,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" method="post" action="<?=base_url("Auth/login")?>">
+				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
 						Movie Ticket
 					</span>
@@ -31,6 +32,7 @@
 						</span>
 
 						<a class="txt2" href=<?=base_url("Auth/registerForm")?>>
+						<a class="txt2" href="<?php echo base_url('test_control_register')?>">
 							Sign Up
 						</a>
 					</div>
