@@ -35,6 +35,12 @@
 				</div>
 				<!-- end footer list -->
 
+				<div class="col-12">
+					<div class="footer__copyright">
+						<small><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></small>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</footer>
