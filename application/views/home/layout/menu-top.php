@@ -9,7 +9,7 @@
 							<!-- header logo -->
 							<a href=<?=base_url()?> class="header__logo">
 							<a href="index.html" class="header__logo">
-								<img src="img/logo.svg" alt="">
+								<img src="<?php echo base_url('/asset/home/')?>img/logo.svg" alt="">
 							</a>
 							<!-- end header logo -->
 

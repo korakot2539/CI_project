@@ -1,7 +1,7 @@
 
 
 	<!-- page title -->
-	<section class="section section--first section--bg" data-bg="img/section/section.jpg">
+	<section class="section section--first section--bg" data-bg="<?php echo base_url('/asset/home/') ?>img/section/section.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -60,7 +60,7 @@
 				<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
 					<div class="card">
 						<div class="card__cover">
-							<img src="img/covers/cover.jpg" alt="">
+							<img src="<?php echo base_url('asset\home\img\covers\cover.jpg') ?>" alt="">
 							<a href="#" class="card__play">
 								<i class="icon ion-ios-play"></i>
 							</a>
@@ -81,7 +81,7 @@
 				<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
 					<div class="card">
 						<div class="card__cover">
-							<img src="img/covers/cover2.jpg" alt="">
+							<img src="<?php echo base_url('asset\home\img\covers\cover2.jpg') ?>" alt="">
 							<a href="#" class="card__play">
 								<i class="icon ion-ios-play"></i>
 							</a>
@@ -115,6 +115,7 @@
 					</ul>
 				</div>
 				<!-- end paginator -->
+				
 			</div>
 		</div>
 	</div>
