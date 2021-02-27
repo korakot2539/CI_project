@@ -36,16 +36,21 @@ class Movie extends CI_Controller
 
 	public function add()
 	{	
-		// $this->form_validation->set_rules('province_id','จังหวัด','greater_than[0]',array('greater_than'=>'กรุณาเลือก %s'));
+
+		$config['upload_path'] = "./uploads/";
+		$config['allowed_types'] = 'gif|jpg|png';
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config); 
+
 		$this->form_validation->set_rules('movie_name', 'ชื่อภาพยนต์ ', 'required' , array('required'=> ' กรุณากรอก %s '));
+		// $this->form_validation->set_rules('poster', 'โปสเตอร์ ', 'required' , array('required'=> ' กรุณาเลือก %s '));
 
 		if($this->form_validation->run() == FALSE ){
 			// Load form
-			// $data['errors'] = validation_errors();
 			$this->session->set_flashdata('flash_errors',validation_errors());
-			
-			$data['movie'] = ''; 
+			$data['movie'] = ""; 
 			$data['method'] = "add";	
+			$data['error'] = "";
 
 			$categories = $this->Category_model->getAll(0,100);
 			$arr = array('--CATEGORY--');
@@ -56,39 +61,32 @@ class Movie extends CI_Controller
 
 			$data["content"] = 'movie/form';
 			$this->load->view('layout/main',$data);
-		}
-		else{
-			// SAVE
-			// assign to variable
-			$movie_name = $this->input->post('movie_name');
+		}else{
 
-			$target_dir = "uploads/";
-			$target_file = $target_dir . basename($_FILES["poster"]["name"]);
-			$uploadOk = 1;
-			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-			// Check if image file is a actual image or fake image
-			if(isset($_POST["submit"])) {
-				$check = getimagesize($_FILES["poster"]["tmp_name"]);
-				if($check !== false) {
-					echo "File is an image - " . $check["mime"] . ".";
-					$uploadOk = 1;
-				} else {
-					echo "File is not an image.";
-					$uploadOk = 0;
-				}
+			if ( ! $this->upload->do_upload('poster'))
+			{
+			// no file uploaded or failed upload
+				$data['error'] = $this->upload->display_errors();
+				$data['movie'] = ''; 
+				$data['method'] = "add";
+				$data["content"] = 'movie/form';
+				$this->load->view('layout/main', $data);
 			}
-
-			// Prepare Query builder
-			$params['movie_name'] = $movie_name;
-			$params['poster'] = $target_file;
-
-			$this->db->insert('movie',$params);
-
-			$this->session->set_flashdata('flash_success','ข้อมูลถูกบันทึกแล้ว');
-
-			redirect("Movie/add");
+			else{
+				// SAVE
+				// assign to variable
+				$movie_name = $this->input->post('movie_name');
+				$target_dir = "uploads/";
+				$target_file = $target_dir . basename($_FILES["poster"]["name"]);
+				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+				// Prepre Query builder
+				$params['movie_name'] = $movie_name;
+				$params['poster'] = $target_file;
+				$this->db->insert('movie',$params);
+				$this->session->set_flashdata('flash_success','ข้อมูลถูกบันทึกแล้ว');
+				redirect("Movie/add");
+			}
 		}
-
 		
 	}
 	

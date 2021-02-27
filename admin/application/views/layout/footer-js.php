@@ -16,7 +16,7 @@
     <script src="<?=base_url('assets/')?>js/demo/chart-pie-demo.js"></script>
     <script src="<?=base_url('assets/')?>jquery.selectboxes.js"></script>
 
-    <script>
+    <!-- <script>
     // Get the modal
     var modal = document.getElementById("myModal");
 
@@ -37,4 +37,4 @@
     span.onclick = function() { 
         modal.style.display = "none";
     }
-    </script>
+    </script> -->
