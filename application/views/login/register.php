@@ -1,11 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
 
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form id="registration" class="login100-form">
-					<span class="login100-form-title p-b-26">
-						Sign up
-					</span>
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="<?=base_url('asset/')?>login/css/util.css" rel="stylesheet">
+    <link href="<?=base_url('asset/')?>login/css/main.css" rel="stylesheet">
+
+    <?php echo link_tag('asset/login/css/util.css'); ?>
+    <?php echo link_tag('asset/login/css/main.css'); ?>
+
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form id="registration" class="login100-form">
+                    <span class="login100-form-title p-b-26">
+                        Sign up
+                    </span>
                     <div class="wrap-input100 input-email">
                         <input class="input100" type="email" id="email" name="email">
                         <span class="focus-input100" data-placeholder="Email"></span>
@@ -34,16 +50,23 @@
                             </button>
                         </div>
                     </div>
-				</form>
+                </form>
                 <div class="text-left p-t-20">
-					<a class="txt2" href=<?=base_url("Auth/loginForm")?>>
-					<a class="txt2" href="<?php echo base_url('test_control_login')?>">
-						Back
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <a class="txt2" href=<?=base_url("Auth/loginForm")?>>
+                        <a class="txt2" href="<?php echo base_url('test_control_login')?>">
+                            Back
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="<?php echo base_url('asset/login/js/main.js'); ?>"></script>
+    <script src="<?php echo base_url('asset/login/js/jquery.validate.js'); ?>"></script>
+    <script src="<?php echo base_url('asset/login/js/form-check.js');?>"></script>
+</body>
+
+</html>
