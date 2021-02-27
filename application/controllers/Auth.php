@@ -10,8 +10,7 @@ class Auth extends CI_Controller {
 
     function loginForm()
     {
-        $data["content"]="login/content/login";
-        $this->load->view("login/login_main",$data);	
+        $this->load->view("login/login");	
     }
 
     function login()
@@ -32,7 +31,7 @@ class Auth extends CI_Controller {
         else
         {
             $this->session->set_flashdata('flash_errors', "Username or password invalid");
-            $this->load->view("login");
+            $this->load->view("login/login");
         }
     }
 
@@ -44,8 +43,7 @@ class Auth extends CI_Controller {
 
     function registerForm()
     {
-        $data["content"]="login/content/register";
-        $this->load->view("login/login_main",$data);	
+        $this->load->view("login/register");	
     }
 
     function register()

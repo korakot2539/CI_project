@@ -10,10 +10,7 @@ class Contact extends CI_Controller
 
   public function index()
   {
-	echo "Hi";
-	exit();
-    $data['content'] = '/home/content/contact';
-    $this->load->view('home/home_main',$data);
+    $this->load->view('contact/contact');
   }
 
 }

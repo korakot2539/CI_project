@@ -16,15 +16,15 @@
 							<!-- header nav -->
 							<ul class="header__nav">
 								<li class="header__nav-item">
-									<a class="header__nav-link" href=<?=base_url()?> role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+									<a class="header__nav-link" href="<?=base_url('Home')?>" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
 								</li>
 
 								<li class="header__nav-item">
-									<a class="header__nav-link" href=<?=base_url()?> role="button" aria-haspopup="true" aria-expanded="false">History</a>
+									<a class="header__nav-link" href=<?=base_url('History')?> role="button" aria-haspopup="true" aria-expanded="false">History</a>
 								</li>
 
 								<li class="header__nav-item">
-									<a class="header__nav-link" href=<?=base_url()?> role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+									<a class="header__nav-link" href="<?=base_url('Contact')?>" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
 								</li>
 
 								<li class="header__nav-item">
@@ -45,7 +45,7 @@
 								</button>
 
 								<a href=<?=base_url("Auth/loginForm")?> class="header__sign-in">
-								<a href="signin.html" class="header__sign-in">
+								<a href="<?php echo base_url('Auth/loginForm') ?>" class="header__sign-in">
 									<i class="icon ion-ios-log-in"></i>
 									<span>sign in</span>
 								</a>
