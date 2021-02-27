@@ -25,7 +25,6 @@
 
 								<li class="header__nav-item">
 									<a class="header__nav-link" href=<?=base_url()?> role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
-									<a class="header__nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
 								</li>
 
 								<li class="header__nav-item">

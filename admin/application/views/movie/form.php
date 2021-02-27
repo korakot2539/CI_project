@@ -17,12 +17,15 @@
     <!-- Card Header - Accordion -->
     <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
         role="button" aria-expanded="true" aria-controls="collapseCardExample">
-        <h6 class="m-0 font-weight-bold text-primary">Province Form</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Movie Form</h6>
     </a>
     <!-- Card Content - Collapse -->
     <div class="collapse show" id="collapseCardExample">
         <div class="card-body">
-           <div class="row">
+			<div class="row">
+				<?=$error?>
+			</div>
+           	<div class="row">
 			<div class="col-md-12">
 				<?php 
 					if($method == 'edit'){
@@ -50,7 +53,7 @@
 					  </div>
 
 					  <div class="form-group row">
-					    <label for="province_name" class="col-sm-2 col-form-label">Movie poster</label>
+					    <label for="poster" class="col-sm-2 col-form-label">Movie poster</label>
 					    <div class="col-sm-4">
 						  <input type="file" name="poster" id="poster"/>
 					    </div>
