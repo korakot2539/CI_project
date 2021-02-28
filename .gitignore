@@ -8,4 +8,5 @@ index.php
 license.txt
 readme.rst
 /admin/system
-config.php
+/application/config/config.php
+/admin/application/config/config.php
