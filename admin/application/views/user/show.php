@@ -71,7 +71,7 @@
 							<td><?=$user->name ?></td>
 							<td><?=$user->phone ?></td>
 							<td>
-								<a href="<?=base_url("User/editForm/$user->user_id")?>" class="btn btn-warning">edit</a>
+								<a href="<?=base_url("User/edit/$user->user_id")?>" class="btn btn-warning">edit</a>
 								<a href="<?=base_url("User/delete/$user->user_id")?>" class="btn btn-danger"
 								onclick="return confirm('Delete ?'); ">delete</a>
 							</td>

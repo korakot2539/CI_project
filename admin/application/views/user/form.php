@@ -29,7 +29,7 @@
 			<div class="col-md-12">
 				<?php 
 					if($method == 'edit'){
-						$action ="User/edit/$user_id";
+						$action ="User/edit/$user->user_id";
 						$str = "Edit form";
 					}
 					else
