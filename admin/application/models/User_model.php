@@ -17,14 +17,16 @@
  		 $query = $this->db->get();
         return $query->row(0);
 	}
-	public function getAll()
+	public function getAll( $keyword='')
 	{
 		
         $this->db->select('user_id,email,name,phone');
         $this->db->from('user');
 
-       
-
+		// if(strlen($keyword) > 0){
+        //     $this->db->like('name', $keyword, 'both'); 
+		// }
+		
  		$query = $this->db->get();
       	return $query->result();
 	}

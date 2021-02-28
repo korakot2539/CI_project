@@ -19,7 +19,7 @@ class User extends CI_Controller
 
 
 		$config['base_url'] = base_url("User/index/");
-		$config['total_rows'] = $this->User_model->count($keyword,);
+		$config['total_rows'] = $this->User_model->count($keyword);
 		$config['per_page'] = 10;
 
 		$this->pagination->initialize($config);
@@ -32,63 +32,49 @@ class User extends CI_Controller
 		$users  = $this->User_model->getAll($start, $config['per_page'] ,$keyword);
 		$data['total_rows'] = $config['total_rows'];
 		$data['users'] = $users;
-		$data['content'] = "user/show";
+		$data['content'] = "User/show";
 		$this->load->view("layout/main",$data);
 	}
 
 	public function add()
 	{	
 
-		// $config['upload_path'] = "./uploads/";
-		// $config['allowed_types'] = 'gif|jpg|png';
-		// $this->load->library('upload', $config);
-		// $this->upload->initialize($config); 
+	
+	
 
-		// $this->form_validation->set_rules('movie_name', 'ชื่อภาพยนต์ ', 'required' , array('required'=> ' กรุณากรอก %s '));
-		// // $this->form_validation->set_rules('poster', 'โปสเตอร์ ', 'required' , array('required'=> ' กรุณาเลือก %s '));
+		$this->form_validation->set_rules('email', 'อีเมล', 'required' , array('required'=> ' กรุณากรอก %s '));
+		$this->form_validation->set_rules('name', 'ชื่อ', 'required' , array('required'=> ' กรุณากรอก %s '));
+		$this->form_validation->set_rules('phone', 'เบอร์โทร', 'required' , array('required'=> ' กรุณากรอก %s '));
+		// $this->form_validation->set_rules('poster', 'โปสเตอร์ ', 'required' , array('required'=> ' กรุณาเลือก %s '));
 
-		// if($this->form_validation->run() == FALSE ){
-		// 	// Load form
-		// 	$this->session->set_flashdata('flash_errors',validation_errors());
-		// 	$data['movie'] = ""; 
-		// 	$data['method'] = "add";	
-		// 	$data['error'] = "";
+		if($this->form_validation->run() == FALSE ){
+			// Load form
+			$this->session->set_flashdata('flash_errors',validation_errors());
+			$data['email'] = ""; 
+			$data['name'] = "";	
+			$data['phone'] = "";
+			$data['user'] = "";
+			$data["content"] = 'User/form';
+			$data['method'] = "add";	
+			$data['error'] = "";
+			$this->load->view('layout/main',$data);
+		}else{
+			// SAVE
+				// assign to variable
+				$email = $this->input->post('email');
+				$name = $this->input->post('name');
+				$phone = $this->input->post('phone');
+				$params['email'] = $email;
+				$params['name'] = $name;
+				$params['phone'] = $phone;
+				
+				$this->db->insert('user',$params);
 
-		// 	$categories = $this->Category_model->getAll(0,100);
-		// 	$arr = array('--CATEGORY--');
-		// 	foreach ($categories as $category) {
-		// 		$arr[$category->category_id] = $category->category_name;
-		// 	}
-		// 	$data['categories'] = $arr;
-
-		// 	$data["content"] = 'movie/form';
-		// 	$this->load->view('layout/main',$data);
-		// }else{
-
-		// 	if ( ! $this->upload->do_upload('poster'))
-		// 	{
-		// 	// no file uploaded or failed upload
-		// 		$data['error'] = $this->upload->display_errors();
-		// 		$data['movie'] = ''; 
-		// 		$data['method'] = "add";
-		// 		$data["content"] = 'movie/form';
-		// 		$this->load->view('layout/main', $data);
-		// 	}
-		// 	else{
-		// 		// SAVE
-		// 		// assign to variable
-		// 		$movie_name = $this->input->post('movie_name');
-		// 		$target_dir = "uploads/";
-		// 		$target_file = $target_dir . basename($_FILES["poster"]["name"]);
-		// 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-		// 		// Prepre Query builder
-		// 		$params['movie_name'] = $movie_name;
-		// 		$params['poster'] = $target_file;
-		// 		$this->db->insert('movie',$params);
-		// 		$this->session->set_flashdata('flash_success','ข้อมูลถูกบันทึกแล้ว');
-		// 		redirect("Movie/add");
-		// 	}
-		// }
+				$this->session->set_flashdata('flash_success','ข้อมูลถูกบันทึกแล้ว');
+				redirect("User/add");
+				
+			
+		}
 		
 	}
 	
@@ -147,7 +133,7 @@ class User extends CI_Controller
 	{
 		$this->session->set_flashdata('flash_success','ข้อมูลถูกลบแล้วไม่สามารถย้อนกลับได้อีก');
 
-		$this->db->where('user_id',$movie_id);
+		$this->db->where('user_id',$user_id);
 		$this->db->delete('user');
 
 		redirect("User/index");

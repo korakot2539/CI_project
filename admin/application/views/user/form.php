@@ -17,7 +17,7 @@
     <!-- Card Header - Accordion -->
     <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
         role="button" aria-expanded="true" aria-controls="collapseCardExample">
-        <h6 class="m-0 font-weight-bold text-primary">Movie Form</h6>
+        <h6 class="m-0 font-weight-bold text-primary">User Form</h6>
     </a>
     <!-- Card Content - Collapse -->
     <div class="collapse show" id="collapseCardExample">
@@ -29,33 +29,48 @@
 			<div class="col-md-12">
 				<?php 
 					if($method == 'edit'){
-						$action ="Movie/edit/$province_id";
+						$action ="User/edit/$user_id";
 						$str = "Edit form";
 					}
 					else
 					{
-						$action = "Movie/add";
+						$action = "User/add";
 						$str = "Add form";
 					}	
 					
 				 ?>
 				<form method="post" action="<?=base_url($action)?>" enctype="multipart/form-data">
-					 <h3>Movie <?=$str ?></h3>
+					 <h3>User <?=$str ?></h3>
 					 <div class="form-group row">
-					    <label for="movie_name" class="col-sm-2 col-form-label">Movie Name</label>
+					    <label for="email" class="col-sm-2 col-form-label">email</label>
 					    <div class="col-sm-4">
 					    	<?php 
 					    		// (condition)?true:false;
-					    		$movie_name = is_object($movie)?$movie->movie_name:'';
+					    		$email = is_object($user)?$user->email:'';
 					    	?>
-					      <input type="text" class="form-control" name="movie_name" id="movie_name" value="<?=$movie_name ?>">
+					      <input type="text" class="form-control" name="email" id="email" value="<?=$email ?>">
 					    </div>
 					  </div>
 
 					  <div class="form-group row">
-					    <label for="poster" class="col-sm-2 col-form-label">Movie poster</label>
+					    <label for="email" class="col-sm-2 col-form-label">Name</label>
 					    <div class="col-sm-4">
-						  <input type="file" name="poster" id="poster"/>
+					    	<?php 
+					    		// (condition)?true:false;
+					    		$name = is_object($user)?$user->name:'';
+					    	?>
+					      <input type="text" class="form-control" name="name" id="name" value="<?=$name ?>">
+					    </div>
+					  </div>
+
+					  <div class="form-group row">
+					    <label for="email" class="col-sm-2 col-form-label">Phone</label>
+					    <div class="col-sm-4">
+					    	<?php 
+					    		// (condition)?true:false;
+					    		$phone = is_object($user)?$user->phone:'';
+					    	?>
+					      <input type="text" class="form-control" name="phone" id="phone" value="<?=$phone ?>">
 					    </div>
 					  </div>
 
