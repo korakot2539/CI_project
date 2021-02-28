@@ -33,6 +33,10 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Movie</span>
                 </a>
+                <a class="nav-link py-2" href="<?=base_url("Category")?>">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Category</span>
+                </a>
                 <a class="nav-link py-2" href="<?=base_url("User")?>">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>User</span>
