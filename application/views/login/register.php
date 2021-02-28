@@ -9,9 +9,6 @@
     <link href="<?=base_url('asset/')?>login/css/util.css" rel="stylesheet">
     <link href="<?=base_url('asset/')?>login/css/main.css" rel="stylesheet">
 
-    <?php echo link_tag('asset/login/css/util.css'); ?>
-    <?php echo link_tag('asset/login/css/main.css'); ?>
-
 </head>
 
 <body>
@@ -44,7 +41,7 @@
                     </div>
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
-                            <div class="login100-form-bgbtn"></div>
+                            <!-- <div class="login100-form-bgbtn"></div> -->
                             <button class="login100-form-btn">
                                 Register
                             </button>
@@ -52,8 +49,7 @@
                     </div>
                 </form>
                 <div class="text-left p-t-20">
-                    <a class="txt2" href=<?=base_url("Auth/loginForm")?>>
-                        <a class="txt2" href="<?php echo base_url('test_control_login')?>">
+                        <a class="txt2" href="javascript:history.back()">
                             Back
                         </a>
                 </div>
@@ -67,6 +63,7 @@
     <script src="<?php echo base_url('asset/login/js/main.js'); ?>"></script>
     <script src="<?php echo base_url('asset/login/js/jquery.validate.js'); ?>"></script>
     <script src="<?php echo base_url('asset/login/js/form-check.js');?>"></script>
+
 </body>
 
 </html>
