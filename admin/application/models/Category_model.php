@@ -25,5 +25,16 @@
  		$query = $this->db->get();
       	return $query->result();
 	}
+
+	public function count($keyword='')
+    {
+        if(strlen($keyword) > 0){
+            $this->db->like('category_name', $keyword, 'both'); 
+        }
+        $this->db->from('category');       
+
+        return $this->db->count_all_results();
+
+    }
 	
 }
