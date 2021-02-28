@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view('layout/header-css.php')?>
+    <?php $this->load->view('layout/header-css.php') ?>
 </head>
 
 <body>
@@ -11,8 +11,7 @@
 
 
     <!-- page title -->
-    <section class="section section--first section--bg"
-        data-bg="<?php echo base_url('/asset/home/') ?>img/section/section.jpg">
+    <section class="section section--first section--bg" data-bg="<?php echo base_url('/asset/home/') ?>img/section/section.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -38,14 +37,12 @@
                             <div class="filter__item" id="filter__genre">
                                 <span class="filter__item-label">GENRE:</span>
 
-                                <div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-genre"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-genre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <input type="button" value="Action/Adventure">
                                     <span></span>
                                 </div>
 
-                                <ul class="filter__item-menu dropdown-menu scrollbar-dropdown"
-                                    aria-labelledby="filter-genre">
+                                <ul class="filter__item-menu dropdown-menu scrollbar-dropdown" aria-labelledby="filter-genre">
                                     <li>Action/Adventure</li>
                                     <li>Animals</li>
                                     <li>Animation</li>
@@ -70,47 +67,22 @@
             <div class="container">
                 <div class="row">
                     <!-- card -->
+                    <?foreach ($movies as $movie) {?>
                     <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
                         <div class="card">
                             <div class="card__cover">
-                                <img src="<?php echo base_url('asset\home\img\covers\cover.jpg') ?>" alt="">
-                                <a href="#" class="card__play">
+                                <img src="<?= base_url('admin/' . $movie->poster) ?>" alt="">
+                                <a href="<?= base_url("Reserve/movie_details/$movie->movie_id") ?>" class="card__play">
                                     <i class="icon ion-ios-play"></i>
                                 </a>
                             </div>
                             <div class="card__content">
-                                <h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
-                                <span class="card__category">
-                                    <a href="#">Action</a>
-                                    <a href="#">Triler</a>
-                                </span>
-                                <span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
+                                <h3 class="card__title"><a href="#"><?= $movie->movie_name ?></a></h3>
                             </div>
                         </div>
                     </div>
+                    <?}?>
                     <!-- end card -->
-
-                    <!-- card -->
-                    <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card">
-                            <div class="card__cover">
-                                <img src="<?php echo base_url('asset\home\img\covers\cover2.jpg') ?>" alt="">
-                                <a href="#" class="card__play">
-                                    <i class="icon ion-ios-play"></i>
-                                </a>
-                            </div>
-                            <div class="card__content">
-                                <h3 class="card__title"><a href="#">Benched</a></h3>
-                                <span class="card__category">
-                                    <a href="#">Comedy</a>
-                                </span>
-                                <span class="card__rate"><i class="icon ion-ios-star"></i>7.1</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end card -->
-
-
 
                     <!-- paginator -->
                     <div class="col-12">
