@@ -20,15 +20,7 @@
 								</li>
 
 								<li class="header__nav-item">
-									<a class="header__nav-link" href=<?=base_url('History')?> role="button" aria-haspopup="true" aria-expanded="false">History</a>
-								</li>
-
-								<li class="header__nav-item">
 									<a class="header__nav-link" href="<?=base_url('Contact')?>" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
-								</li>
-
-								<li class="header__nav-item">
-									<a class="header__nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">History</a>
 								</li>
 
 								<li class="header__nav-item">
