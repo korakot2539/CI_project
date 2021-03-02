@@ -24,11 +24,13 @@ class History extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('History_model');
   }
 
   public function index()
   {
-    $this->load->view('history/history');
+    $data['historys'] = $this->History_model->getAll();
+    $this->load->view('history/history',$data);
   }
 
 }
