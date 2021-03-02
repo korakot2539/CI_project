@@ -17,18 +17,20 @@
  		 $query = $this->db->get();
         return $query->row(0);
 	}
-	public function getAll( $keyword='')
+	public function getAll($start=0 , $perpage=0, $keyword='')
 	{
 		
-        $this->db->select('user_id,email,name,phone');
-        $this->db->from('user');
+      
 
-		// if(strlen($keyword) > 0){
-        //     $this->db->like('name', $keyword, 'both'); 
-		// }
-		
- 		$query = $this->db->get();
-      	return $query->result();
+		  $this->db->select('user_id,email,name,phone');
+		  $this->db->from('user');
+		  if(strlen($keyword) > 0){
+			  $this->db->like('name', $keyword, 'both'); 
+		  }
+		  $this->db->order_by('name', 'ASC');
+		  $this->db->limit($perpage,$start);
+		  $query = $this->db->get();
+		  return $query->result();
 	}
 
 	

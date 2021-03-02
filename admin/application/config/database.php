@@ -67,7 +67,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $active_group variable lets you choose which connection group to
 | make active.  By default there is only one group (the 'default' group).
 |
-| The $query_builder variables lets you determine whether or not to load
+| The $query_builder variables lets you determine whether or not to loads
 | the query builder class.
 */
 $active_group = 'default';
@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => 'korakot.ddns.net',
+	'username' => 'korakot',
+	'password' => 'korakot2539',
 	'database' => 'ci_project',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
