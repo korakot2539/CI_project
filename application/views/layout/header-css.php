@@ -2,7 +2,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CUbuntu:300,400,500,700" rel="stylesheet"> 
 
     <!-- CSS -->
     <link href="<?=base_url('asset/')?>home/css/bootstrap-reboot.min.css" rel="stylesheet">
@@ -42,3 +42,4 @@
     <link href="<?=base_url('asset/')?>home/icon/apple-touch-icon-72x72.png">
     <link href="<?=base_url('asset/')?>home/icon/apple-touch-icon-114x114.png">
     <link href="<?=base_url('asset/')?>home/icon/apple-touch-icon-144x144.png">
+    
