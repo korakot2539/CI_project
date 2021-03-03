@@ -33,8 +33,12 @@
 		$this->db->limit($perpage,$start);
  		$query = $this->db->get();
       	return $query->result();
-	}
 
+<<<<<<< HEAD
+=======
+	}
+	
+>>>>>>> origin/Tai
     public function count($keyword='')
     {
         if(strlen($keyword) > 0){
