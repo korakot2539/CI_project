@@ -20,8 +20,7 @@ class Home extends CI_Controller
 		// exit();
 		// $this->session->userdata("ss_admin_id");
 
-		$data['content'] = "home/index";
-		$this->load->view('layout/main',$data);		
+		redirect('Movie');	
 	}
 	
 }
