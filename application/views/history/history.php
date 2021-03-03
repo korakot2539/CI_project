@@ -3,9 +3,12 @@
 
 <head>
     <?php $this->load->view('layout/header-css.php')?>
+    <link rel="stylesheet" href="<?=base_url('asset/')?>home/css/history.css">
+    
+</style>
 </head>
 
-<body>
+<body></body>
     <!-- Import module -->
     <?php $this->load->view("layout/menu-top.php"); ?>
 
@@ -29,29 +32,27 @@
 
     <!-- catalog -->
     <div class="catalog">
-        <div class="container">
+        <div class="container history_container">
             <div class="row">
-                <div class="table">
-                    <table class="history_table table table-striped">
+                <div>
+                    <table class="history_table ">
                         <thead>
                             <tr class="his_head">
                                 <th class="his_date">Date</th>
-                                <th class="his_name">Name</th>
+                                <th class="his_name">Movie Name</th>
                                 <th class="his_ticket">Ticket</th>
+                                <th class="his_total">Total</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($historys as $history) {?>
                             <tr>
-                                <td class="his_body_date">12 Sep, 2020</td>
-                                <td>Boby soap</td>
-                                <td>2 qty.</td>
+                                <td class="his_body_date"><?php echo $history->history_date?></td>
+                                <td><?php echo $history->name?></td>
+                                <td><?php echo $history->history_quantity?> qty.</td>
+                                <td class="his_body_total">฿<?php echo number_format($history->history_total_price, 2) ?></td>
                             </tr>
-                            <tr>
-                                <td class="his_body_date">12 Sep, 2020</td>
-                                <td>Boby soap
-                                </td>
-                                <td>2 qty.</td>
-                            </tr>
+                            <?php }?>
                         </tbody>
                     </table>
                 </div>
@@ -81,6 +82,10 @@
 
     <?php $this->load->view("layout/footer.php"); ?>
     <?php $this->load->view("layout/footer-js.php"); ?>
+    <script src="<?php echo base_url('asset/home/js/date.js');?>"></script>
+    <script>
+        //alert(Date.today())
+    </script>
 </body>
 
 </html>
