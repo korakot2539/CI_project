@@ -48,7 +48,6 @@
 
                                         <ul class="card__list">
                                             <li>HD</li>
-                                            <li>16+</li>
                                         </ul>
                                     </div>
 
@@ -56,13 +55,12 @@
                                         <li><span>Genre:</span> <a href="#">Action</a>
                                             <a href="#">Triler</a>
                                         </li>
-                                        <li><span>Release year:</span> 2017</li>
-                                        <li><span>Running time:</span> 120 min</li>
-                                        <li><span>Country:</span> <a href="#">USA</a> </li>
+                                        <li><span>Release year:</span><?= $movies->release_year ?></li>
+                                        <li><span>Running time:</span><?= $movies->movie_time ?> minute</li>
                                     </ul>
 
                                     <div class="card__description card__description--details">
-                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+                                        <?= $movies->movie_detail ?>
                                     </div>
                                 </div>
                             </div>
@@ -74,37 +72,14 @@
 
                 <!-- player -->
                 <div class="col-12 col-xl-6">
-                    <video controls crossorigin playsinline poster="../../../cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player">
-                        <!-- Video files -->
-                        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
-                        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
-                        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
-                        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4" type="video/mp4" size="1440">
-
-                        <!-- Caption files -->
-                        <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default>
-                        <track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
-
-                        <!-- Fallback for browsers that don't support the <video> element -->
-                        <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
-                    </video>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="100%" height="300" frameBorder="0" src="<?= $movies->movie_trailer ?>" allowfullscreen></iframe>
+                    </div>
                 </div>
                 <!-- end player -->
 
-                <div class="col-12">
+                <div class=" col-12">
                     <div class="details__wrap">
-                        <!-- availables -->
-                        <div class="details__devices">
-                            <span class="details__devices-title">Available on devices:</span>
-                            <ul class="details__devices-list">
-                                <li><i class="icon ion-logo-apple"></i><span>IOS</span></li>
-                                <li><i class="icon ion-logo-android"></i><span>Android</span></li>
-                                <li><i class="icon ion-logo-windows"></i><span>Windows</span></li>
-                                <li><i class="icon ion-md-tv"></i><span>Smart TV</span></li>
-                            </ul>
-                        </div>
-                        <!-- end availables -->
-
                         <!-- share -->
                         <div class="details__share">
                             <span class="details__share-title">Share with friends:</span>

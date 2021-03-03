@@ -34,6 +34,24 @@
  		$query = $this->db->get();
       	return $query->result();
 	}
+	public function getByCategory($category='')
+	{
+		
+		$this->db->select("	movie.*,
+							category1.category_name as 'category1_name',
+							category2.category_name as 'category2_name',
+							category3.category_name as 'category3_name',
+						  ",FALSE);
+        $this->db->from('movie');
+
+        $this->db->join("category as category1",'category1.category_id=movie.category1');
+        $this->db->join("category as category2",'category2.category_id=movie.category2');
+        $this->db->join("category as category3",'category3.category_id=movie.category3');
+		$this->db->where('category1_name',$category);
+ 		$query = $this->db->get();
+      	return $query->result();
+	}
+
 
 	
     public function count($keyword='')
