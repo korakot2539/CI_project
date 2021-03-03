@@ -40,9 +40,14 @@ class Movie_model extends CI_Model
         $this->db->where('category1',$category);
 		$query = $this->db->get();
         return $query->result();
-
-        
     }
-   
-    
+    public function CategoryName($catename='')
+	{
+        $this->db->select("	category.*,
+        category_name",FALSE);
+        $this->db->from('category');
+        $this->db->where('category_id',$catename);
+		$query = $this->db->get();
+        return $query->row(0);
+    }
 }

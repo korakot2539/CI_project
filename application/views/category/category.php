@@ -7,7 +7,10 @@
 
 <body>
     <!-- Import module -->
-    <?php $this->load->view("layout/menu-top.php"); ?>
+    
+	<!-- header -->
+	<?php $this->load->view("layout/menu-top.php"); ?>
+	<!-- end header -->
 
 
     <!-- page title -->
@@ -17,7 +20,11 @@
                 <div class="col-12">
                     <div class="section__wrap">
                         <!-- section title -->
+<<<<<<< HEAD
                         <h2 class="section__title">Category <?= $category->category_name?></h2>
+=======
+                        <h2 class="section__title"><?=$catename->category_name?></h2>
+>>>>>>> origin/Tai
                         <!-- end section title -->
                     </div>
                 </div>
