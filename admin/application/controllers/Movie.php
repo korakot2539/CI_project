@@ -15,7 +15,6 @@ class Movie extends CI_Controller
 		$keyword = $this->input->get('keyword');
 		$data['keyword'] = $keyword;
 
-
 		$config['base_url'] = base_url("Movie/index/");
 		$config['total_rows'] = $this->Movie_model->count($keyword);
 		$config['per_page'] = 10;

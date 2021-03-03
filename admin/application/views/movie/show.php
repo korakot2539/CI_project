@@ -27,9 +27,9 @@
            <div class="row">
 			<div class="col-md-12">
 				<div class="table-responsive">
-					<table class="table table-striped">
+					<table class="table table-striped"> <!--style="table-layout: fixed;"> -->
 						<tr>
-							<td colspan="4">
+							<td colspan="10">
 								<form method="get" action="<?=base_url("Movie/index")?>">
 									<a href="<?=base_url("Movie/add")?>" class="btn btn-success">add</a>
 									
@@ -59,30 +59,41 @@
 						</tr>
 						<tr>
 							<th>ID</th>
-							<th>Movie name</th>
-							<th>Poster</th>
+							<th style="max-width:50px">Movie name</th>
+							<th style="max-width:100px">Detail</th>
+							<th style="max-width:50px">Trailer</th>
+							<th>Time (Min.)</th>
+							<th>Imdb</th>
+							<th>Year</th>
 							<th>Category</th>
+							<th>Poster</th>
 							<th>Action</th>
 						</tr>
 						<?php foreach ($movies as $movie) { ?>
-						<tr>
+						<tr style="max-height:3em">
 							<td><?=$movie->movie_id ?></td>
 							<td><?=$movie->movie_name ?></td>
+							<td><?=$movie->movie_detail ?></td>
 							<td>
-								<?
-									if($movie->poster!="") 
-									{
-										echo "<i class='fas fa-image'></i>";
-									}
-								?>
-
-								<img id="myImg" src="<?=base_url("$movie->poster")?>" alt="<?=$movie->poster ?>" style="width:100%;max-width:100px">
-
-								
-
+								<a id="trailer<?=$movie->movie_id ?>" href=<?=$movie->movie_trailer?>>
+									<?=$movie->movie_name." trailer"?>
+								</a>
 							</td>
 							<td>
-								<?=$movie->category1_name.",".$movie->category2_name.",".$movie->category3_name ?>
+								<?=$movie->movie_time ?>
+							</td>
+							<td>
+								<?=$movie->movie_imdb ?>
+							</td>
+							<td>
+								<?=$movie->release_year ?>
+							</td>
+							<td>
+								<?=$movie->category1_name ?>
+							</td>
+							<td>
+								<?= $movie->poster ? "<a href='#'><i class='fas fa-image'></i></a>":"-" ?>
+								<!-- <img id="poster<?=$movie->movie_id ?>" src="<?=base_url("$movie->poster")?>" alt="<?=$movie->poster ?>" style="width:100%;max-width:100px"> -->
 							</td>
 							<td>
 								<a href="<?=base_url("Movie/editForm/$movie->movie_id")?>" class="btn btn-warning">edit</a>
