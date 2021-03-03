@@ -23,19 +23,19 @@
 								<li class="header__nav-item">
 									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
-										<li><a href="<?=base_url('Category/Action')?>">Action</a></li>
-										<li><a href="<?=base_url('Category/Adventure')?>">Adventure</a></li>
-										<li><a href="<?=base_url('Category/War')?>">War</a></li>
-										<li><a href="<?=base_url('Category/Drama')?>">Drama</a></li>
-										<li><a href="<?=base_url('Category/Sci-Fi')?>">Sci-Fi</a></li>
-										<li><a href="<?=base_url('Category/Family')?>">Family</a></li>
-										<li><a href="<?=base_url('Category/Thriller')?>">Thriller</a></li>
-										<li><a href="<?=base_url('Category/Documentaries')?>">Documentaries</a></li>
-										<li><a href="<?=base_url('Category/Animation')?>">Animation</a></li>
-										<li><a href="<?=base_url('Category/Comedy')?>">Comedy</a></li>
-										<li><a href="<?=base_url('Category/Romance')?>">Romance</a></li>
-										<li><a href="<?=base_url('Category/Fantasy')?>">Fantasy</a></li>
-										<li><a href="<?=base_url('Category/Musicals')?>">Musicals</a></li>
+										<li><a href="<?=base_url('Category/index/1')?>">Action</a></li>
+										<li><a href="<?=base_url('Category/index/2')?>">Adventure</a></li>
+										<li><a href="<?=base_url('Category/index/3')?>">War</a></li>
+										<li><a href="<?=base_url('Category/index/4')?>">Drama</a></li>
+										<li><a href="<?=base_url('Category/index/5')?>">Sci-Fi</a></li>
+										<li><a href="<?=base_url('Category/index/6')?>">Family</a></li>
+										<li><a href="<?=base_url('Category/index/7')?>">Thriller</a></li>
+										<li><a href="<?=base_url('Category/index/8')?>">Documentaries</a></li>
+										<li><a href="<?=base_url('Category/index/9')?>">Animation</a></li>
+										<li><a href="<?=base_url('Category/index/10')?>">Comedy</a></li>
+										<li><a href="<?=base_url('Category/index/11')?>">Romance</a></li>
+										<li><a href="<?=base_url('Category/index/12')?>">Fantasy</a></li>
+										<li><a href="<?=base_url('Category/index/13')?>">Musicals</a></li>
 									</ul>
 								</li>
 								<!-- end dropdown -->

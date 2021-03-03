@@ -17,7 +17,7 @@
                 <div class="col-12">
                     <div class="section__wrap">
                         <!-- section title -->
-                        <h2 class="section__title">Movie</h2>
+                        <h2 class="section__title">Category</h2>
                         <!-- end section title -->
                     </div>
                 </div>

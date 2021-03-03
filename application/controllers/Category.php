@@ -12,9 +12,9 @@ class Category extends CI_Controller
 
 	public function index($category)
 	{
-		$config['base_url'] = base_url('Category/page/');	
-		$config['total_rows'] = $this->Movie_model->record_count();
-		$config['per_page'] = 16;
+		$config['base_url'] = base_url('Category/index/');	
+		// $config['total_rows'] = $this->Movie_model->record_count();
+		// $config['per_page'] = 16;
 		
 		// bootstrap paginator
 		$config['num_tag_open'] = '<li class ="paginator__item">'; 
@@ -36,13 +36,13 @@ class Category extends CI_Controller
 		$this->pagination->initialize($config);
 		$data['links'] = $this->pagination->create_links();
 
-		$start = $this->uri->segment(3)>0?$this->uri->segment(3):0;
-		$movies  = $this->Movie_model->getByCategory($start, $config['per_page'] ,$category);
-
-		$data['total_rows'] = $config['total_rows'];
+		// $start = $this->uri->segment(3)>0?$this->uri->segment(3):0;
+		// $movies  = $this->Movie_model->getByCategory($start, $config['per_page'] ,$category);
+		$movies  = $this->Movie_model->getByCategory($category);
+		// $data['total_rows'] = $config['total_rows'];
 		$data['movies'] = $movies;
-
-		$this->load->view('Category/Category', $data);
+	
+		$this->load->view('category/category', $data);
 
 	}
 }
