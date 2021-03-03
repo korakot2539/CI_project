@@ -96,14 +96,14 @@
 								<!-- <img id="poster<?=$movie->movie_id ?>" src="<?=base_url("$movie->poster")?>" alt="<?=$movie->poster ?>" style="width:100%;max-width:100px"> -->
 							</td>
 							<td>
-								<a href="<?=base_url("Movie/editForm/$movie->movie_id")?>" class="btn btn-warning">edit</a>
+								<a href="<?=base_url("Movie/edit/$movie->movie_id")?>" class="btn btn-warning">edit</a>
 								<a href="<?=base_url("Movie/delete/$movie->movie_id")?>" class="btn btn-danger"
 								onclick="return confirm('Delete ?'); ">delete</a>
 							</td>
 						</tr>
 						<?php } ?>
 						<tr>
-							<td colspan="4">
+							<td colspan="10">
 								<?=$links ?>
 							</td>
 						</tr>

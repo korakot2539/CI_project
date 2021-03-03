@@ -30,7 +30,7 @@
 					<table class="table table-striped">
 						<tr>
 							<td colspan="4">
-								<form method="get" action="<?=base_url("Movie/index")?>">
+								<form method="get" action="<?=base_url("Category/index")?>">
 									<a href="<?=base_url("Category/add")?>" class="btn btn-success">add</a>
 									
 									Total 

@@ -13,12 +13,12 @@
         $this->db->from('movie');
 		$this->db->where('movie_id',$id);
       
-        $this->db->join('category','category.category1=movie.category_id');
+        $this->db->join('category','category.category_id=movie.category1');
  		 $query = $this->db->get();
         return $query->row(0);
 	}
 
-	public function getAll($keyword='')
+	public function getAll($start=0 , $perpage=0, $keyword='')
 	{
 		
 		$this->db->select("	movie.*,
@@ -30,7 +30,7 @@
 		if(strlen($keyword) > 0){
             $this->db->like('movie_name', $keyword, 'both'); 
 		}
-
+		$this->db->limit($perpage,$start);
  		$query = $this->db->get();
       	return $query->result();
 	}

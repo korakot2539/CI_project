@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> origin/Tai
+=======
 >>>>>>> origin/Tai
 <?php
 class User extends CI_Controller
@@ -104,6 +107,7 @@ class User extends CI_Controller
     }
 }
 
+<<<<<<< HEAD
 =======
 <?php
 class User extends CI_Controller
@@ -171,5 +175,7 @@ class User extends CI_Controller
 <<<<<<< HEAD
 =======
 >>>>>>> 2701da5627522ef97a861b9f80e596e4bc109dad
+>>>>>>> origin/Tai
+=======
 >>>>>>> origin/Tai
 ?>

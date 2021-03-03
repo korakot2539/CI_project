@@ -26,42 +26,6 @@
     </section>
     <!-- end page title -->
 
-    <!-- filter -->
-    <div class="filter">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="filter__content">
-                        <div class="filter__items">
-                            <!-- filter item -->
-                            <div class="filter__item" id="filter__genre">
-                                <span class="filter__item-label">GENRE:</span>
-
-                                <div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-genre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <input type="button" value="Action/Adventure">
-                                    <span></span>
-                                </div>
-
-                                <ul class="filter__item-menu dropdown-menu scrollbar-dropdown" aria-labelledby="filter-genre">
-                                    <li>Action/Adventure</li>
-                                    <li>Animals</li>
-                                    <li>Animation</li>
-                                </ul>
-                            </div>
-                            <!-- end filter item -->
-
-
-
-                            <!-- filter btn -->
-                            <button class="filter__btn" type="button">apply filter</button>
-                            <!-- end filter btn -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end filter -->
-
         <!-- catalog -->
         <div class="catalog">
             <div class="container">

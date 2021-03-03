@@ -75,9 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	//'hostname' => 'localhost',
 	'hostname' => 'korakot.ddns.net',
+	//'username' => 'root',
 	'username' => 'korakot',
 	'password' => 'korakot2539',
+	//'password' => '',
 	'database' => 'ci_project',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

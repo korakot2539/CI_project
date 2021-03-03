@@ -16,12 +16,15 @@
  		 $query = $this->db->get();
         return $query->row(0);
 	}
-	public function getAll()
+	public function getAll($start=0 , $perpage=0, $keyword='')
 	{
 		
 		$this->db->select('*');
         $this->db->from('category');
-
+		if(strlen($keyword) > 0){
+			$this->db->like('category_name', $keyword, 'both'); 
+		}
+		$this->db->limit($perpage,$start);
  		$query = $this->db->get();
       	return $query->result();
 	}

@@ -14,7 +14,7 @@ class Home extends CI_Controller
 	{
 		$config['base_url'] = base_url('Movie/page/');	
 		$config['total_rows'] = $this->Movie_model->record_count();
-		$config['per_page'] = 6;
+		$config['per_page'] = 16;
 		
 		// bootstrap paginator
 		$config['num_tag_open'] = '<li class ="paginator__item">'; 
@@ -27,9 +27,9 @@ class Home extends CI_Controller
 		$config['next_tag_close'] = '</li>'; 
 		$config['prev_tag_open'] = '<li class="paginator__item paginator__item--prev">'; 
 		$config['prev_tag_close'] = '</li>'; 
-		$config['first_tag_open'] = '<li>'; 
+		$config['first_tag_open'] = '<li class="paginator__item paginator__item--next">'; 
 		$config['first_tag_close'] = '</li>'; 
-		$config['last_tag_open'] = '<li>'; 
+		$config['last_tag_open'] = '<li class="paginator__item paginator__item--prev">'; 
 		$config['last_tag_close'] = '</li>';
 		// bootstrap paginator
 
