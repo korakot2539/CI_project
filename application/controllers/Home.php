@@ -14,7 +14,7 @@ class Home extends CI_Controller
 	{
 		$config['base_url'] = base_url('Movie/page/');	
 		$config['total_rows'] = $this->Movie_model->record_count();
-		$config['per_page'] = 16;
+		$config['per_page'] = 24;
 		
 		// bootstrap paginator
 		$config['num_tag_open'] = '<li class ="paginator__item">'; 
