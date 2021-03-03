@@ -21,12 +21,21 @@
 									
 								<!-- dropdown -->
 								<li class="header__nav-item">
-									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
+									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
-										<li><a href="catalog1.html">Catalog Grid</a></li>
-										<li><a href="catalog2.html">Catalog List</a></li>
-										<li><a href="details1.html">Details Movie</a></li>
-										<li><a href="details2.html">Details TV Series</a></li>
+										<li><a href="<?=base_url('Category/Action')?>">Action</a></li>
+										<li><a href="<?=base_url('Category/Adventure')?>">Adventure</a></li>
+										<li><a href="<?=base_url('Category/War')?>">War</a></li>
+										<li><a href="<?=base_url('Category/Drama')?>">Drama</a></li>
+										<li><a href="<?=base_url('Category/Sci-Fi')?>">Sci-Fi</a></li>
+										<li><a href="<?=base_url('Category/Family')?>">Family</a></li>
+										<li><a href="<?=base_url('Category/Thriller')?>">Thriller</a></li>
+										<li><a href="<?=base_url('Category/Documentaries')?>">Documentaries</a></li>
+										<li><a href="<?=base_url('Category/Animation')?>">Animation</a></li>
+										<li><a href="<?=base_url('Category/Comedy')?>">Comedy</a></li>
+										<li><a href="<?=base_url('Category/Romance')?>">Romance</a></li>
+										<li><a href="<?=base_url('Category/Fantasy')?>">Fantasy</a></li>
+										<li><a href="<?=base_url('Category/Musicals')?>">Musicals</a></li>
 									</ul>
 								</li>
 								<!-- end dropdown -->
