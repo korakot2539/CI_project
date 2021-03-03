@@ -4,7 +4,6 @@
             <div class="card-header ">
                 <div class="row">
                     <div class="col-sm-6 text-left">
-                        <h5 class="card-category">Managing</h5>
                         <h2 class="card-title">Category</h2>
                     </div>
                 </div>
@@ -49,15 +48,15 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>#</th>
                                 <th>Category name</th>
                                 <th class="text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($categories as $category) { ?>
+                            <?php foreach ($categories as $key => $category) { ?>
                             <tr>
-                                <td><?=$category->category_id ?></td>
+                                <td><?=$key+1 ?></td>
                                 <td class="movie-name-body"><?=$category->category_name ?></td>
 								<td class="td-actions text-right">
                                 <a href="<?=base_url("Category/edit/$category->category_id")?>">
@@ -81,43 +80,6 @@
                                 </td>
                             </tr>
                         </tbody>
-
-<<<<<<< HEAD
-            <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                        class="fas fa-download fa-sm text-white-50"></i> Home</a>
-            </div>
-            
-            
-            <!-- Collapsable Card Example -->
-<div class="card shadow mb-4">
-    <!-- Card Header - Accordion -->
-    <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
-        role="button" aria-expanded="true" aria-controls="collapseCardExample">
-        <h6 class="m-0 font-weight-bold text-primary">Category</h6>
-    </a>
-    <!-- Card Content - Collapse -->
-    <div class="collapse show" id="collapseCardExample">
-        <div class="card-body">
-           <div class="row">
-			<div class="col-md-12">
-				<div class="table-responsive">
-					<table class="table table-striped">
-						<tr>
-							<td colspan="4">
-								<form method="get" action="<?=base_url("Category/index")?>">
-									<a href="<?=base_url("Category/add")?>" class="btn btn-success">add</a>
-									
-									Total 
-									<span style="color:red">
-										<?= $total_rows ?>
-									</span> 
-									records 
-=======
->>>>>>> origin/theme_admin
-
                     </table>
                 </div>
             </div>
