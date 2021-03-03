@@ -1,20 +1,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> origin/Tai
 =======
 >>>>>>> origin/Tai
+=======
+
+>>>>>>> origin/theme_admin
 <?php
 class User extends CI_Controller
 {
     function __construct() {
         parent:: __construct();    
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/Tai
         $this->load->model("User_model");
     }
 
@@ -24,7 +25,6 @@ class User extends CI_Controller
     }
 
     public function login()
-<<<<<<< HEAD
     {
         $this->form_validation->set_rules("username", "Username", "required|alpha_numeric", 
                                     array(
@@ -59,6 +59,7 @@ class User extends CI_Controller
             }
         }
     }
+<<<<<<< HEAD
 =======
 	{
 		$this->form_validation->set_rules('username', ' รหัสผู้ใช้ ', 'required' , 
@@ -164,6 +165,8 @@ class User extends CI_Controller
 		
 	}
 >>>>>>> origin/Tai
+=======
+>>>>>>> origin/theme_admin
 
     public function logout()
     {
@@ -174,9 +177,12 @@ class User extends CI_Controller
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2701da5627522ef97a861b9f80e596e4bc109dad
 >>>>>>> origin/Tai
 =======
 >>>>>>> origin/Tai
+=======
+>>>>>>> origin/theme_admin
 ?>

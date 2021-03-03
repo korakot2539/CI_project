@@ -1,56 +1,63 @@
+<!--
+=========================================================
+* * Black Dashboard - v1.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/black-dashboard
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php $this->load->view("layout/header-css") ?>
+    <?php $this->load->view('layout/header-css') ?>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 </head>
 
-<body id="page-top">
+<body class="">
+    <div class="wrapper">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
 
-       <?php $this->load->view("layout/menu-left") ?>
+        <!-- Menu left -->
+        <?php $this->load->view('layout/menu-left.php') ?>
+        <!-- End of menu left -->
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
 
-            <? $this->load->view($content) ?>
+        <div class="main-panel">
+            <!-- Menu top -->
+            <?php $this->load->view('layout/menu-top.php') ?>
+            <!-- End of menu top -->
 
-            <? $this->load->view("layout/footer")?>
 
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?=base_url("User/logout")?>">Logout</a>
-                </div>
+            <div class="content">
+                <!-- Content -->
+                <?php $this->load->view($content) ?>
+                <!-- End of content -->
             </div>
+
+            <!-- Footer -->
+            <?php $this->load->view('layout/footer.php') ?>
+            <!-- End of footer -->
+
+            <!-- End of main panel -->
         </div>
     </div>
 
-    <?php $this->load->view("layout/footer-js") ?>
+
+
+
+
+
+    <!-- JS Core -->
+    <?php $this->load->view('layout/footer-js.php') ?>
+    <!-- End of JS Core -->
 
 </body>
 
