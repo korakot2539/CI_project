@@ -42,10 +42,20 @@
 							<!-- end header nav -->
 							<!-- header auth -->
 							<div class="header__auth">
+							<?php $name = "";
+							if($this->session->userdata('ss_user_name')!="") $name=$this->session->userdata('ss_user_name') ?>
+							<?php if($name != ""){ ?>
+								<span style="color:azure;">Welcome... <?=$name ?></span>
+								<a href=<?=base_url("Auth/logout") ?> class="header__sign-in">
+								<i class="icon ion-ios-log-in"></i>
+									<span>logout</span>
+								</a>
+								<? }else{?>
 								<a href=<?=base_url("Auth/loginForm")?> class="header__sign-in">
 								<i class="icon ion-ios-log-in"></i>
 									<span>login</span>
 								</a>
+							<? }?>
 							</div>
 							<!-- end header auth -->
 							<!-- header menu btn -->
