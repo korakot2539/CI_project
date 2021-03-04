@@ -28,16 +28,11 @@
                             </div>
                             <b class="caret d-none d-lg-block d-xl-block"></b>
                             <p class="d-lg-none">
-                                Log out
+                                Log outa
                             </p>
                         </a>
                         <ul class="dropdown-menu dropdown-navbar">
-                            <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a>
-                            </li>
-                            <li class="nav-link"><a href="javascript:void(0)"
-                                    class="nav-item dropdown-item">Settings</a></li>
-                            <li class="dropdown-divider"></li>
-                            <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a>
+                            <li class="nav-link"><a href="<?php echo base_url("Admin/logout") ?>" class="nav-item dropdown-item">Log out</a>
                             </li>
                         </ul>
                     </li>

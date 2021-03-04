@@ -14,3 +14,5 @@
   <link href="<?php echo base_url() ?>assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- Overwrite css -->
   <link href="<?php echo base_url() ?>assets/css/main.css" rel="stylesheet" />
+
+  <link href="<?php echo base_url() ?>assets/css/file-input.scss" rel="stylesheet" />
