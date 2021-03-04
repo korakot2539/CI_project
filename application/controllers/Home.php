@@ -14,7 +14,7 @@ class Home extends CI_Controller
 	{
 		$config['base_url'] = base_url('Movie/page/');	
 		$config['total_rows'] = $this->Movie_model->record_count();
-		$config['per_page'] = 16;
+		$config['per_page'] = 24;
 		
 		// bootstrap paginator
 		$config['num_tag_open'] = '<li class ="paginator__item">'; 
@@ -38,10 +38,10 @@ class Home extends CI_Controller
 
 		$start = $this->uri->segment(3)>0?$this->uri->segment(3):0;
 		$movies  = $this->Movie_model->getAll($start, $config['per_page']);
-
+		$showcategorys = $this->Movie_model->getCheckCategory();
 		$data['total_rows'] = $config['total_rows'];
 		$data['movies'] = $movies;
-
+		$data['showcategorys'] = $showcategorys;
 		$this->load->view('home/home', $data);
 
 	}

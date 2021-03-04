@@ -58,7 +58,6 @@ class Movie_model extends CI_Model
         category1.category_name",FALSE);
         $this->db->from('movie');
         $this->db->join("category as category1",'category1.category_id=movie.category1');
-        $this->db->where('category_id',$catename);
 		$query = $this->db->get();
         return $query->result();
     }
