@@ -20,11 +20,7 @@
                 <div class="col-12">
                     <div class="section__wrap">
                         <!-- section title -->
-<<<<<<< HEAD
-                        <h2 class="section__title">Category <?= $category->category_name?></h2>
-=======
                         <h2 class="section__title"><?=$catename->category_name?></h2>
->>>>>>> origin/Tai
                         <!-- end section title -->
                     </div>
                 </div>
