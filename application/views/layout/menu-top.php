@@ -24,7 +24,7 @@
 		
 										<?foreach ($showcategorys as $showcategory) {?>
 											<li><a href="<?=base_url("Category/index/$showcategory->category1")?>"><?= $showcategory->category_name ?></a></li>
-                    <?}?>
+                   						<?}?>
 									</ul>
 								</li>
 								<!-- end dropdown -->
@@ -45,11 +45,20 @@
 							<?php $name = "";
 							if($this->session->userdata('ss_user_name')!="") $name=$this->session->userdata('ss_user_name') ?>
 							<?php if($name != ""){ ?>
-								<span style="color:azure;">Welcome... <?=$name ?></span>
-								<a href=<?=base_url("Auth/logout") ?> class="header__sign-in">
+								<!-- dropdown -->
+								<li class="header__nav-item">
+									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome... <?=$name ?></a>
+									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
+										<li><a href="#">Chage Password</a></li>
+										<li><a href="#">History</a></li>
+										<li><a href=<?=base_url("Auth/logout") ?>>Logout</a></li>
+									</ul>
+								</li>
+								<!-- end dropdown -->
+								<!-- <a href=<?=base_url("Auth/logout") ?> class="header__sign-in">
 								<i class="icon ion-ios-log-in"></i>
 									<span>logout</span>
-								</a>
+								</a> -->
 								<? }else{?>
 								<a href=<?=base_url("Auth/loginForm")?> class="header__sign-in">
 								<i class="icon ion-ios-log-in"></i>
