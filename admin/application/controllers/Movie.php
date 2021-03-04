@@ -107,12 +107,10 @@ class Movie extends CI_Controller
 		$this->upload->initialize($config); 
 
 		$this->form_validation->set_rules('movie_name', 'ชื่อภาพยนต์ ', 'required' , array('required'=> ' กรุณากรอก %s '));
-		// $this->form_validation->set_rules('amphur_name', ' ชื่ออำเภอ ', 'required' , array('trim|required'=> ' กรุณากรอก %s '));
 
 		if($this->form_validation->run() == FALSE ){
 			
 			// Load form
-			// $data['errors'] = validation_errors();
 			$this->session->set_flashdata('flash_errors',validation_errors());
 			
 			$categories = $this->Category_model->getAll(0,100);
@@ -120,40 +118,53 @@ class Movie extends CI_Controller
 
 			$data['movie'] = $this->Movie_model->getOne($movie_id); 
 			$data['method'] = "edit";	
-			$data['error'] = "";		
 
 			$data["content"] = 'movie/form';
 			$this->load->view('layout/main',$data);
 		}
 		else{
-			// SAVE
-			// assign to variable
-			$movie_name = $this->input->post('movie_name');
-			$movie_detail = $this->input->post('movie_detail');
-			$movie_trailer = $this->input->post('movie_trailer');
-			$movie_time = $this->input->post('movie_time');
-			$movie_imdb = $this->input->post('movie_imdb');
-			$release_year = $this->input->post('release_year');
-			$category1 = $this->input->post('category1');
-			$target_dir = "uploads/";
-			$target_file = $target_dir . basename($_FILES["poster"]["name"]);
-			$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-			// Prepare Query builder
-			$params['movie_name'] = $movie_name;
-			$params['movie_detail'] = $movie_detail;
-			$params['movie_trailer'] = $movie_trailer;
-			$params['movie_time'] = $movie_time;
-			$params['movie_imdb'] = $movie_imdb;
-			$params['release_year'] = $release_year;
-			$params['category1'] = $category1;
-			$params['poster'] = $target_file;
+			if ( ! $this->upload->do_upload('poster'))
+			{
+			// no file uploaded or failed upload
+				$data['movie'] = $this->Movie_model->getOne($movie_id); 
+				$data['method'] = "edit";
+				$data["content"] = 'movie/form';
+				$this->load->view('layout/main', $data);
+			}
+			else{
+				// SAVE
+				// assign to variable
+				$movie_name = $this->input->post('movie_name');
+				$movie_detail = $this->input->post('movie_detail');
+				$movie_trailer = $this->input->post('movie_trailer');
+				$movie_time = $this->input->post('movie_time');
+				$movie_imdb = $this->input->post('movie_imdb');
+				$release_year = $this->input->post('release_year');
+				$category1 = $this->input->post('category1');
 
-			$this->db->where('movie_id',$movie_id);
-			$this->db->update('movie',$params);
+				$params['movie_name'] = $movie_name;
+				$params['movie_detail'] = $movie_detail;
+				$params['movie_trailer'] = $movie_trailer;
+				$params['movie_time'] = $movie_time;
+				$params['movie_imdb'] = $movie_imdb;
+				$params['release_year'] = $release_year;
+				$params['category1'] = $category1;
 
-			$this->session->set_flashdata('flash_success','ข้อมูลถูกบันทึกแล้ว');
+				if(!empty($_FILES['poster'])){
+					#then execute this code when there is image uploaded
+					$target_dir = "uploads/";
+					$target_file = $target_dir . basename($_FILES["poster"]["name"]);
+					$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+					$params['poster'] = $target_file;
+				}			
 
-			redirect("Movie/edit/$movie_id",'refresh');
+				$this->db->where('movie_id',$movie_id);
+				$this->db->update('movie',$params);
+
+				$this->session->set_flashdata('flash_success','ข้อมูลถูกบันทึกแล้ว');
+
+				redirect("Movie/edit/$movie_id",'refresh');
+			}
 		}
 	}
 

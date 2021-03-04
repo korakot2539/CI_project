@@ -92,7 +92,7 @@
 								?>
 
                                 <img id="myImg" src="<?=base_url("$movie->poster")?>" alt="<?=$movie->poster ?>"
-                                    style="width:100%;max-width:100px">
+                                    style="width:100%;max-width:100px"/>
 
                             </td>
                             <td class="td-actions text-right">
