@@ -36,15 +36,18 @@ class Category extends CI_Controller
 
 		$this->pagination->initialize($config);
 		$data['links'] = $this->pagination->create_links();
-
+		
 		// $start = $this->uri->segment(3)>0?$this->uri->segment(3):0;
 		// $movies  = $this->Movie_model->getByCategory($start, $config['per_page'] ,$category);
 		$movies  = $this->Movie_model->getByCategory($category);
+		$showcategorys = $this->Movie_model->getCheckCategory();
 		$catename = $this->Movie_model->CategoryName($category);
 		// $data['total_rows'] = $config['total_rows'];
 		$data['movies'] = $movies;
 		$data['category'] = $category;
 		$data['catename'] = $catename;
+		$data['showcategorys'] = $showcategorys;
+		
 		$this->load->view('category/category', $data);
 
 	}
