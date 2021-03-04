@@ -74,13 +74,14 @@
                             </td>
                             </tr>
                             <?php } ?>
-                            <tr>
-                                <td colspan="3">
-                                    <?=$links ?>
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
+                    <div class="custom-pagination">
+                    <?=$links ?>
+
+                    </div>
+
                 </div>
             </div>
         </div>

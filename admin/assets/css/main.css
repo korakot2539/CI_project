@@ -70,3 +70,10 @@
     font-weight: bold;
     color: white !important;
 }
+
+.custom-pagination{
+    margin-top: 20px !important;   
+}
+.centerthing{
+    text-align: center;
+}
