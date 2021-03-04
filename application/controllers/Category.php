@@ -1,20 +1,21 @@
 <?php
 
-class Home extends CI_Controller
+class Category extends CI_Controller
 {
 
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Movie_model');
+		$this->load->model('Category_model');
 		$this->load->library('pagination');
 	}
 
-	public function index()
+	public function index($category)
 	{
-		$config['base_url'] = base_url('Movie/page/');	
-		$config['total_rows'] = $this->Movie_model->record_count();
-		$config['per_page'] = 24;
+		$config['base_url'] = base_url('Category/index/');	
+		// $config['total_rows'] = $this->Movie_model->record_count();
+		// $config['per_page'] = 16;
 		
 		// bootstrap paginator
 		$config['num_tag_open'] = '<li class ="paginator__item">'; 
@@ -36,13 +37,15 @@ class Home extends CI_Controller
 		$this->pagination->initialize($config);
 		$data['links'] = $this->pagination->create_links();
 
-		$start = $this->uri->segment(3)>0?$this->uri->segment(3):0;
-		$movies  = $this->Movie_model->getAll($start, $config['per_page']);
-
-		$data['total_rows'] = $config['total_rows'];
+		// $start = $this->uri->segment(3)>0?$this->uri->segment(3):0;
+		// $movies  = $this->Movie_model->getByCategory($start, $config['per_page'] ,$category);
+		$movies  = $this->Movie_model->getByCategory($category);
+		$catename = $this->Movie_model->CategoryName($category);
+		// $data['total_rows'] = $config['total_rows'];
 		$data['movies'] = $movies;
-
-		$this->load->view('home/home', $data);
+		$data['category'] = $category;
+		$data['catename'] = $catename;
+		$this->load->view('category/category', $data);
 
 	}
 }

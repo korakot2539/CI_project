@@ -4,7 +4,6 @@
             <div class="card-header ">
                 <div class="row">
                     <div class="col-sm-6 text-left">
-                        <h5 class="card-category">Managing</h5>
                         <h2 class="card-title">Movie</h2>
                     </div>
                 </div>
@@ -44,9 +43,6 @@
                             </div>
                         </div>
                     </form>
-
-
-
                 </div>
 
                 <table class="table table-striped">
@@ -54,20 +50,39 @@
                         <tr>
                             <th class="text-center">#</th>
                             <th class="movie-name-head">Movie Name</th>
+                            <th class="movie-name-head">Detail</th>
+							<th class="movie-name-head">Trailer</th>
+							<th class="movie-name-head">Time (Min.)</th>
+							<th class="movie-name-head">Imdb</th>
+							<th class="movie-name-head">Year</th>
+                            <th class="movie-name-head">Category</th>
                             <th class="movie-poster-head">Poster</th>
-                            <th>Category</th>
                             <th class="text-right">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
-                        $count = 0;
-                        foreach ($movies as $movie) {   
-                            $count+=1  
-                            ?>
+                        <?php foreach ($movies as $key => $movie) {  ?>
                         <tr>
-                            <td class="text-center"><?php echo $count ?></td>
+                            <td class="text-center"><?= $key+1 ?></td>
                             <td class="movie-name-body"><?=$movie->movie_name ?></td>
+                            <td><?=$movie->movie_detail ?></td>
+							<td>
+								<a id="trailer<?=$movie->movie_id ?>" href=<?=$movie->movie_trailer?>>
+									<?=$movie->movie_name." trailer"?>
+								</a>
+							</td>
+							<td>
+								<?=$movie->movie_time ?>
+							</td>
+							<td>
+								<?=$movie->movie_imdb ?>
+							</td>
+							<td>
+								<?=$movie->release_year ?>
+							</td>
+							<td>
+								<?=$movie->category1_name ?>
+							</td>
                             <td>
                                 <?
 									if($movie->poster!="") 
@@ -77,10 +92,8 @@
 								?>
 
                                 <img id="myImg" src="<?=base_url("$movie->poster")?>" alt="<?=$movie->poster ?>"
-                                    style="width:100%;max-width:100px">
+                                    style="width:100%;max-width:100px"/>
 
-                            </td>
-                            <td><?=$movie->category1_name.", ".$movie->category2_name.", ".$movie->category3_name ?>
                             </td>
                             <td class="td-actions text-right">
                                 <a href="<?php echo base_url("Movie/edit/$movie->movie_id") ?>">
@@ -98,6 +111,11 @@
                             </td>
                         </tr>
                         <?php } ?>
+                        <tr>
+							<td colspan="10">
+								<?=$links ?>
+							</td>
+						</tr>
                     </tbody>
                 </table>
             </div>

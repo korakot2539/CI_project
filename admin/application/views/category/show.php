@@ -4,7 +4,6 @@
             <div class="card-header ">
                 <div class="row">
                     <div class="col-sm-6 text-left">
-                        <h5 class="card-category">Managing</h5>
                         <h2 class="card-title">Category</h2>
                     </div>
                 </div>
@@ -49,15 +48,15 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>#</th>
                                 <th>Category name</th>
                                 <th class="text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($categories as $category) { ?>
+                            <?php foreach ($categories as $key => $category) { ?>
                             <tr>
-                                <td><?=$category->category_id ?></td>
+                                <td><?=$key+1 ?></td>
                                 <td class="movie-name-body"><?=$category->category_name ?></td>
 								<td class="td-actions text-right">
                                 <a href="<?=base_url("Category/edit/$category->category_id")?>">
@@ -77,8 +76,6 @@
                             <?php } ?>
 
                         </tbody>
-
-
                     </table>
                     <div class="custom-pagination">
                     <?=$links ?>

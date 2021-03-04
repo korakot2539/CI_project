@@ -4,7 +4,6 @@
             <div class="card-header ">
                 <div class="row">
                     <div class="col-sm-6 text-left">
-                        <h5 class="card-category">Managing</h5>
                         <h2 class="card-title">User</h2>
                     </div>
                 </div>
@@ -49,7 +48,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>#</th>
                                 <th>Email</th>
                                 <th>Name</th>
                                 <th>Phone</th>
@@ -57,9 +56,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($users as $user) { ?>
+                            <?php foreach ($users as $key => $user) { ?>
                             <tr>
-                                <td><?=$user->user_id ?></td>
+                                <td><?=$key+1 ?></td>
                                 <td class="movie-name-body"><?=$user->email ?></td>
                                 <td class="movie-name-body"><?=$user->name ?></td>
                                 <td><?=$user->phone ?></td>

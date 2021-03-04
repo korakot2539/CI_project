@@ -3734,11 +3734,12 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .history_table .his_head {
-  color:rgba(255,255,255,0.75)
+  color:rgba(255,255,255,0.75);
 }
 
 .history_table .his_date {
   width: 130px;
+  text-align: center;
 }
 
 .history_table .his_name {
@@ -3747,6 +3748,16 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .history_table .his_ticket {
   width: 150px;
+}
+
+
+.history_table .his_total {
+  width: 90px;
+  text-align: center;
+}
+
+.history_table .his_body_total {
+  text-align: center;
 }
 
 .history_table tbody{
@@ -3759,5 +3770,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .history_table .his_body_date{
-  font-size: 12px;
+  font-size: 14px;
+  text-align: center;
+  padding:3px 0;
 }
