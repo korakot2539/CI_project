@@ -43,11 +43,23 @@ class Movie_model extends CI_Model
     }
     public function CategoryName($catename='')
 	{
+
         $this->db->select("	category.*,
         category_name",FALSE);
         $this->db->from('category');
         $this->db->where('category_id',$catename);
 		$query = $this->db->get();
         return $query->row(0);
+    }
+    public function getCheckCategory()
+	{
+        $this->db->distinct();
+        $this->db->select("movie.category1,
+        category1.category_name",FALSE);
+        $this->db->from('movie');
+        $this->db->join("category as category1",'category1.category_id=movie.category1');
+        $this->db->where('category_id',$catename);
+		$query = $this->db->get();
+        return $query->result();
     }
 }

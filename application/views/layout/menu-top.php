@@ -23,7 +23,7 @@
 								<li class="header__nav-item">
 									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
-										<li><a href="<?=base_url('Category/index/1')?>">Action</a></li>
+										<!-- <li><a href="<?=base_url('Category/index/1')?>">Action</a></li>
 										<li><a href="<?=base_url('Category/index/2')?>">Adventure</a></li>
 										<li><a href="<?=base_url('Category/index/3')?>">War</a></li>
 										<li><a href="<?=base_url('Category/index/4')?>">Drama</a></li>
@@ -35,7 +35,10 @@
 										<li><a href="<?=base_url('Category/index/10')?>">Comedy</a></li>
 										<li><a href="<?=base_url('Category/index/11')?>">Romance</a></li>
 										<li><a href="<?=base_url('Category/index/12')?>">Fantasy</a></li>
-										<li><a href="<?=base_url('Category/index/13')?>">Musicals</a></li>
+										<li><a href="<?=base_url('Category/index/13')?>">Musicals</a></li> -->
+										<?foreach ($showcategory as $category) {?>
+											<li><a href="<?=base_url('Category/index/1')?>"><?= $category->category_name ?></a></li>
+                    <?}?>
 									</ul>
 								</li>
 								<!-- end dropdown -->
