@@ -77,3 +77,10 @@
 .centerthing{
     text-align: center;
 }
+
+.option-color{
+    color: black !important;
+    font-weight:600;
+}
+
+

@@ -98,9 +98,9 @@
 											$category1 = is_object($movie)?$movie->category1:0;
 										?>
 										<select id="category1" name="category1" class="form-control" >
-											<option >-- category --</option>
+											<option class="option-color" >-- category --</option>
 											<? foreach($categories as $category){?>
-											<option value="<?=$category->category_id?>"
+											<option class="option-color" value="<?=$category->category_id?>"
 												<?= $category1==$category->category_id?'selected':''?>
 											>
 												<?=$category->category_name?>
@@ -110,12 +110,14 @@
 									</div>
 								</div>
 
+								<!-- file upload-->
 								<div class="form-group row">
 									<label for="poster" class="form-inp-pabel col-sm-3 col-form-label">Movie poster</label>
-									<div class="col-sm-6">
+									<div class="col-sm-6 mt-2">
 										<input class="file-upload" type="file" name="poster" id="poster" />
 									</div>
 								</div>
+								<!-- file upload-->
 
 								<div class="form-group row">
 									<div class="col-sm-6">
