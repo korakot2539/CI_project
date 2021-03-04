@@ -150,7 +150,11 @@ class User extends CI_Controller
             	$sess_data = array(
             		'user_id'=> $user->user_id,
             		'user_email'=> $user->email,
+<<<<<<< HEAD
             		'user_fullname'=> $user->name,
+=======
+            		'user_name'=> $user->name,
+>>>>>>> origin/Tai
             		'user_dt'=> date('d M Y H:i:s'),
             	);
             	$this->session->set_userdata($sess_data);
@@ -164,9 +168,12 @@ class User extends CI_Controller
         }
 		
 	}
+<<<<<<< HEAD
 >>>>>>> origin/Tai
 =======
 >>>>>>> origin/theme_admin
+=======
+>>>>>>> origin/Tai
 
     public function logout()
     {
@@ -178,6 +185,7 @@ class User extends CI_Controller
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2701da5627522ef97a861b9f80e596e4bc109dad
 >>>>>>> origin/Tai
@@ -185,4 +193,6 @@ class User extends CI_Controller
 >>>>>>> origin/Tai
 =======
 >>>>>>> origin/theme_admin
+=======
+>>>>>>> origin/Tai
 ?>
