@@ -41,10 +41,10 @@ class Auth extends CI_Controller {
 		redirect("Home");
     }
 
-    function registerForm()
-    {
-        $this->load->view("login/register");	
-    }
+    // function registerForm()
+    // {
+    //     $this->load->view("login/register");	
+    // }
 
     function register()
     {

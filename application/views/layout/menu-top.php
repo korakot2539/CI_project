@@ -1,6 +1,5 @@
-
-	<!-- header -->
-	<header class="header">
+<!-- header -->
+<header class="header">
 		<div class="header__wrap">
 			<div class="container">
 				<div class="row">
@@ -22,19 +21,10 @@
 								<li class="header__nav-item">
 									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
-										<li><a href="<?=base_url('Category/index/1')?>">Action</a></li>
-										<li><a href="<?=base_url('Category/index/2')?>">Adventure</a></li>
-										<li><a href="<?=base_url('Category/index/3')?>">War</a></li>
-										<li><a href="<?=base_url('Category/index/4')?>">Drama</a></li>
-										<li><a href="<?=base_url('Category/index/5')?>">Sci-Fi</a></li>
-										<li><a href="<?=base_url('Category/index/6')?>">Family</a></li>
-										<li><a href="<?=base_url('Category/index/7')?>">Thriller</a></li>
-										<li><a href="<?=base_url('Category/index/8')?>">Documentaries</a></li>
-										<li><a href="<?=base_url('Category/index/9')?>">Animation</a></li>
-										<li><a href="<?=base_url('Category/index/10')?>">Comedy</a></li>
-										<li><a href="<?=base_url('Category/index/11')?>">Romance</a></li>
-										<li><a href="<?=base_url('Category/index/12')?>">Fantasy</a></li>
-										<li><a href="<?=base_url('Category/index/13')?>">Musicals</a></li>
+		
+										<?foreach ($showcategorys as $showcategory) {?>
+											<li><a href="<?=base_url("Category/index/$showcategory->category1")?>"><?= $showcategory->category_name ?></a></li>
+                    <?}?>
 									</ul>
 								</li>
 								<!-- end dropdown -->

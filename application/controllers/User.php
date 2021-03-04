@@ -37,7 +37,7 @@ class User extends CI_Controller
             	$sess_data = array(
             		'user_id'=> $user->user_id,
             		'user_email'=> $user->email,
-            		'user_fullname'=> $user->name,
+            		'user_name'=> $user->name,
             		'user_dt'=> date('d M Y H:i:s'),
             	);
             	$this->session->set_userdata($sess_data);
