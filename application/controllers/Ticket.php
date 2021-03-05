@@ -27,9 +27,9 @@ class Ticket extends CI_Controller
     $this->load->model('Ticket_model');
   }
 
-  public function index()
+  public function index($id)
   {
-    $data['tickets'] = $this->Ticket_model->getAll();
+    $data['tickets'] = $this->Ticket_model->getHistory($id);
     $this->load->view('history/history',$data);
   }
 
