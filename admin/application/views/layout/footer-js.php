@@ -284,3 +284,12 @@ function ekUpload(){
 }
 ekUpload();
   </script>
+
+  <script>
+  function showModal(data)
+{
+   //you can do anything with data, or pass more data to this function. i set this data to modal header for example
+  $('#myImg').attr('src',data);
+  $("#exampleModal").modal();
+}
+  </script>

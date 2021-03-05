@@ -84,7 +84,8 @@
                                 <?=$movie->category1_name ?>
                             </td>
                             <td>
-                                <a data-toggle="modal" data-target="#exampleModal">
+                            <?php $imgpath = base_url("$movie->poster") ?>
+                                <a onclick="showModal('<?php echo $imgpath ?>')">
                                     <?
 									if($movie->poster!="") 
 									{
@@ -102,7 +103,7 @@
                                             <div class="modal-body">
 
                                                 <img id="myImg" src="<?=base_url("$movie->poster")?>"
-                                                    alt="<?=$movie->poster ?>" style="width:100%;max-width:100px" />
+                                                    alt="<?=$movie->poster ?>" style="width:100%;max-width:250px" />
                                             </div>
                                         </div>
                                     </div>
