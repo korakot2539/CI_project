@@ -52,8 +52,8 @@
                                     </div>
 
                                     <ul class="card__meta">
-                                        <li><span>Genre:</span> <a href="#">Action</a>
-                                            <a href="#">Triler</a>
+                                        <li><span>Genre:</span>
+                                            <a href="#"><?= $movies->category_name ?></a>
                                         </li>
                                         <li><span>Release year:</span><?= $movies->release_year ?></li>
                                         <li><span>Running time:</span><?= $movies->movie_time ?> minute</li>
@@ -78,9 +78,11 @@
                 </div>
                 <!-- end player -->
 
-                <div class=" col-12">
+                <div class=" col-16">
                     <div class="details__wrap">
+
                         <!-- share -->
+
                         <div class="details__share">
                             <span class="details__share-title">Share with friends:</span>
 
@@ -89,11 +91,65 @@
                                 <li class="instagram"><a href="#"><i class="icon ion-logo-instagram"></i></a></li>
                                 <li class="twitter"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
                                 <li class="vk"><a href="#"><i class="icon ion-logo-vk"></i></a></li>
+
                             </ul>
+
                         </div>
                         <!-- end share -->
+                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time1") ?>" id="my_form">
+                            <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
+                                <input type="hidden" id="mylist" name="mylist">
+                                <i class="icon ion-ios-log-in"></i>
+                                <span><?= $movies->theater_time1 ?></span>
+                            </a>
+                        </form>
+
+                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time2") ?>" id="my_form">
+                            <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
+                                <input type="hidden" id="mylist2">
+                                <i class="icon ion-ios-log-in"></i>
+                                <span><?= $movies->theater_time2 ?></span>
+                            </a>
+                        </form>
+
+                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time3") ?>" id="my_form">
+                            <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
+                                <input type="hidden" id="mylist3">
+                                <i class="icon ion-ios-log-in"></i>
+                                <span><?= $movies->theater_time3 ?></span>
+                            </a>
+                        </form>
+
+                        <div class="col-8">
+                            <!-- filter item -->
+                            <div class="filter__item" id="filter__quality">
+
+                                <div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-quality" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <input type="button" value="HOW MANY">
+                                    <span></span>
+                                </div>
+
+                                <li class="header__nav-item">
+                                    <select id="drop_list" onchange="myFunction()">
+                                        <option selected>Please Choose your total ticket</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </li>
+
+                            </div>
+                            <!-- end filter it
+                       em -->
+                        </div>
+
                     </div>
+
                 </div>
+
+
+
             </div>
         </div>
         <!-- end details content -->
@@ -103,6 +159,23 @@
     <!-- end about -->
     <?php $this->load->view("layout/footer.php"); ?>
     <?php $this->load->view("layout/footer-js.php"); ?>
+    <script>
+        $("#mylist").val(option_value);
+
+        function myFunction() {
+            var option_value = $("#drop_list option:selected").val();
+            //alert($("#drop_list option:selected").val());
+            $('#mylist').val(option_value)
+            $('#mylist2').val(option_value)
+            $('#mylist3').val(option_value)
+        }
+
+        function confirming() {
+            confirm("Confirm Time and " + $("#drop_list option:selected").val())
+        }
+        //var selectedValue = document.getElementById("drop_list").value;
+    </script>
+
 </body>
 
 </html>
