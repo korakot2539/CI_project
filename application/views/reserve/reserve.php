@@ -3,6 +3,7 @@
 
 <head>
     <?php $this->load->view('layout/header-css.php') ?>
+
     <title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
 
 </head>
@@ -130,7 +131,7 @@
                                 </div>
 
                                 <li class="header__nav-item">
-                                    <select id="drop_list" onchange="myFunction()">
+                                    <select onchange="myFunction()">
                                         <option selected>Please Choose your total ticket</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>

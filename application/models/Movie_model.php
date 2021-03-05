@@ -54,32 +54,4 @@ class Movie_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
-
-    public function getPdfForm($id)
-    {
-        $this->db->select('*');
-        $this->db->from('ticket a');
-        $this->db->join('movie b', 'b.movie_id=a.product_id');
-        $this->db->where('b.movie_id', $id);
-        $this->db->order_by("timestamp", "DESC");
-        $data = $this->db->get();
-        $output = '<table width="100%" cellspacing="5" cellpadding="5">';
-        foreach ($data->result() as $row) {
-            $output .= '
-        <tr>
-        <td width="25%"><img src="' . base_url() . 'images/' . $row->poster . '" /></td>
-        <td width="75%">
-         <p><b>Name : </b>' . $row->movie_name . '</p>
-        </td>
-       </tr>
-   ';
-        }
-        $output .= '
-  <tr>
-   <td colspan="2" align="center"><a href="' . base_url() . 'reverse/reserve" class="btn btn-primary">Back</a></td>
-  </tr>
-  ';
-        $output .= '</table>';
-        return $output;
-    }
 }
