@@ -43,10 +43,19 @@
 							<!-- end header nav -->
 							<!-- header auth -->
 							<div class="header__auth">
+							<?php $name = is_object($this->session->set_userdata('ss_user_name'))?$this->session->set_userdata('user_fullname'):"" ?>
+							<?php if($name != ''){ ?>
+								<span><?php $name ?></span>
+								<a href=<?=base_url("Auth/logout") ?> class="header__sign-in">
+								<i class="icon ion-ios-log-in"></i>
+									<span>logout</span>
+								</a>
+								<? }else{?>
 								<a href=<?=base_url("Auth/loginForm")?> class="header__sign-in">
 								<i class="icon ion-ios-log-in"></i>
 									<span>login</span>
 								</a>
+							<? }?>
 							</div>
 							<!-- end header auth -->
 							<!-- header menu btn -->
