@@ -1,6 +1,5 @@
 <!-- header -->
 <header class="header">
-<<<<<<< HEAD
 		<div class="header__wrap">
 			<div class="container">
 				<div class="row">
@@ -9,17 +8,6 @@
 							<!-- header logo -->
 							<a href=<?=base_url()?> class="header__logo">
 								<img src="<?php echo base_url('/asset/home/')?>img/logo.svg" alt="">
-=======
-	<div class="header__wrap">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="header__content">
-						<!-- header logo -->
-						<a href=<?= base_url() ?> class="header__logo">
-							<a href="index.html" class="header__logo">
-								<img src="<?php echo base_url('/asset/home/') ?>img/logo.svg" alt="">
->>>>>>> 97acd1ba70e9f6710197c3ff9102cfe8d7ee208c
 							</a>
 							<!-- end header logo -->
 
@@ -31,7 +19,6 @@
 									
 								<!-- dropdown -->
 								<li class="header__nav-item">
-<<<<<<< HEAD
 									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
 		
@@ -39,9 +26,6 @@
 											<li><a href="<?=base_url("Category/index/$showcategory->category1")?>"><?= $showcategory->category_name ?></a></li>
                    						<?}?>
 									</ul>
-=======
-									<a class="header__nav-link" href=<?= base_url('History') ?> role="button" aria-haspopup="true" aria-expanded="false">History</a>
->>>>>>> 97acd1ba70e9f6710197c3ff9102cfe8d7ee208c
 								</li>
 								<!-- end dropdown -->
 
@@ -55,7 +39,6 @@
 								</button> -->
 							</div>
 
-<<<<<<< HEAD
 							<!-- end header nav -->
 							<!-- header auth -->
 							<div class="header__auth">
@@ -92,15 +75,6 @@
 							</button>
 							<!-- end header menu btn -->
 						</div>
-=======
-								<a href=<?= base_url("Auth/loginForm") ?> class="header__sign-in">
-									<a href="<?php echo base_url('Auth/loginForm') ?>" class="header__sign-in">
-										<i class="icon ion-ios-log-in"></i>
-										<span>sign in</span>
-									</a>
-							</div>
-							<!-- end header auth -->ด
->>>>>>> 97acd1ba70e9f6710197c3ff9102cfe8d7ee208c
 					</div>
 				</div>
 			</div>
