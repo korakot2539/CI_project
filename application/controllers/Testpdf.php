@@ -12,32 +12,6 @@ class Testpdf extends CI_Controller
 
 	public function index()
 	{
-
-		//============================================================+
-		// File name   : example_009.php
-		// Begin       : 2008-03-04
-		// Last Update : 2013-05-14
-		//
-		// Description : Example 009 for TCPDF class
-		//               Test Image
-		//
-		// Author: Nicola Asuni
-		//
-		// (c) Copyright:
-		//               Nicola Asuni
-		//               Tecnick.com LTD
-		//               www.tecnick.com
-		//               info@tecnick.com
-		//============================================================+
-
-		/**
-		 * Creates an example PDF TEST document using TCPDF
-		 * @package com.tecnick.tcpdf
-		 * @abstract TCPDF - Example: Test Image
-		 * @author Nicola Asuni
-		 * @since 2008-03-04
-		 */
-
 		// create new PDF document
 		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
@@ -88,65 +62,40 @@ class Testpdf extends CI_Controller
 
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-		// Example of Image from data stream ('PHP rules')
-		$imgdata = base64_decode('iVBORw0KGgoAAAANSUhEUgAAABwAAAASCAMAAAB/2U7WAAAABlBMVEUAAAD///+l2Z/dAAAASUlEQVR4XqWQUQoAIAxC2/0vXZDrEX4IJTRkb7lobNUStXsB0jIXIAMSsQnWlsV+wULF4Avk9fLq2r8a5HSE35Q3eO2XP1A1wQkZSgETvDtKdQAAAABJRU5ErkJggg==');
-
-		// The '@' character is used to indicate that follows an image data stream and not an image file name
-		$pdf->Image('@' . $imgdata);
-
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-		// Image example with resizing
-		$pdf->Image('images/image_demo.jpg', 15, 140, 75, 113, 'JPG', 'http://www.tcpdf.org', '', true, 150, '', false, false, 1, false, false, false);
-
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+		$userData = $this->Movie_model->getUserData("3");
+		$image = $userData->poster;
+		$movie_name = $userData->movie_name;
+		$time = $userData->theater_time;
+		$ticket = $userData->total_ticket;
 		// test fitbox with all alignment combinations
 
 		$horizontal_alignments = array('L', 'C', 'R');
 		$vertical_alignments = array('T', 'M', 'B');
 
-		$x = 15;
-		$y = 35;
-		$w = 30;
-		$h = 30;
-		// test all combinations of alignments
-		for ($i = 0; $i < 3; ++$i) {
-			$fitbox = $horizontal_alignments[$i] . ' ';
-			$x = 15;
-			for ($j = 0; $j < 3; ++$j) {
-				$fitbox[1] = $vertical_alignments[$j];
-				$pdf->Rect($x, $y, $w, $h, 'F', array(), array(128, 255, 128));
-				$pdf->Image('images/image_demo.jpg', $x, $y, $w, $h, 'JPG', '', '', false, 300, '', false, false, 0, $fitbox, false, false);
-				$x += 32; // new column
-			}
-			$y += 32; // new row
-		}
-
-		$x = 115;
-		$y = 35;
-		$w = 25;
-		$h = 50;
-		for ($i = 0; $i < 3; ++$i) {
-			$fitbox = $horizontal_alignments[$i] . ' ';
-			$x = 115;
-			for ($j = 0; $j < 3; ++$j) {
-				$fitbox[1] = $vertical_alignments[$j];
-				$pdf->Rect($x, $y, $w, $h, 'F', array(), array(128, 255, 255));
-				$pdf->Image('images/image_demo.jpg', $x, $y, $w, $h, 'JPG', '', '', false, 300, '', false, false, 0, $fitbox, false, false);
-				$x += 27; // new column
-			}
-			$y += 52; // new row
-		}
 
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 		// Stretching, position and alignment example
 
-		$pdf->SetXY(110, 200);
-		$pdf->Image('/admin/uploads/Fury.png', '', '', 40, 40, '', '', 'T', false, 300, '', false, false, 1, false, false, false);
-		$pdf->Image('images/image_demo.jpg', '', '', 40, 40, '', '', '', false, 300, '', false, false, 1, false, false, false);
+		$pdf->SetXY(50, 35);
+		$pdf->Image(base_url() . 'admin/' . $image, '', '', 40, 60, '', '', 'T', false, 300, '', false, false, 1, false, false, false);
 
+		// Image example with resizing
+		$html = '<h2>Movie Ticket</h2>';
+		$html .= '
+		<div style="text-align: center" class="col-6">
+		<div class="feature" margin-right:0>
+		<h4 class="content__tabs" style="color:black;">' . $movie_name . '</h4>
+		<span class="feature__text">' . $time . '</span>
+		<span class="feature__text">' . $ticket . '</span>
+		<p class="feature__text"></p><br>
+		</div>
+		</div>
+		';
+		$pdf->writeHTML($html, true, false, true, false, '');
 		// -------------------------------------------------------------------
 
 		//Close and output PDF document
@@ -176,6 +125,7 @@ class Testpdf extends CI_Controller
 
 	public function html()
 	{
+
 		$pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
 		$pdf->SetFont('freeserif', '', 8, '', true);
 		$pdf->AddPage();
@@ -184,15 +134,20 @@ class Testpdf extends CI_Controller
 		// writeHTMLCell($w, $h, $x, $y, $html='', $border=0, $ln=0, $fill=0, $reseth=true, $align='', $autopadding=true)
 
 		// create some HTML content
+		$userData = $this->Movie_model->getUserData("3");
+		$image = $userData->poster;
+		$movie_name = $userData->movie_name;
+		$time = $userData->theater_time;
+		$ticket = $userData->total_ticket;
 		$html = '<h1>Product Name</h1>';
 		$html .= '
 			<table>
 				<tr>
-					<td><img src="' . base_url("product/pro_382801.jpg") . '" style="width:100mm;height:100mm;" /> </td>
+					<td>img src="' . base_url() . 'admin/' . $userData->poster . '" style="width:100mm;height:100mm;" /> </td>
 					<td>
 						<h4>Detail :  </h4>
 						<p>
-						-
+						
 						</p>
 					</td>
 				</tr>
