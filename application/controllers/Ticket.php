@@ -33,13 +33,4 @@ class Ticket extends CI_Controller
         $data['movies'] = $this->Movie_model->getUserData($id);
         $this->load->view('ticket/ticket', $data);
     }
-
-    public function html_to_pdf($id, $time)
-    {
-        $html_content = '<h3 align="center">Convert HTML to PDF in CodeIgniter using Dompdf</h3>';
-        $html_content .= $this->Movie_model->getPdfForm($id);
-        $this->pdf->loadHtml($html_content);
-        $this->pdf->render();
-        $this->pdf->stream("" . $id . ".pdf", array("Attachment" => 0));
-    }
 }

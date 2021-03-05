@@ -33,7 +33,11 @@ class History_model extends CI_Model {
         $this->db->select('h.*,u.name');
         $this->db->from('history h');
         $this->db->join('user u','h.user_id = u.user_id');
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> origin/Tai
         $query = $this->db->get();
         return $query->result();
     }
