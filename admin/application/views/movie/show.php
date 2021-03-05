@@ -51,10 +51,10 @@
                             <th class="text-center">#</th>
                             <th class="movie-name-head">Movie Name</th>
                             <th class="movie-name-head">Detail</th>
-							<th class="movie-name-head">Trailer</th>
-							<th class="movie-name-head">Time (Min.)</th>
-							<th class="movie-name-head">Imdb</th>
-							<th class="movie-name-head">Year</th>
+                            <th class="movie-name-head">Trailer</th>
+                            <th class="movie-name-head">Time (Min.)</th>
+                            <th class="movie-name-head">Imdb</th>
+                            <th class="movie-name-head">Year</th>
                             <th class="movie-name-head">Category</th>
                             <th class="movie-poster-head">Poster</th>
                             <th class="text-right">Actions</th>
@@ -66,33 +66,47 @@
                             <td class="text-center"><?= $key+1 ?></td>
                             <td class="movie-name-body"><?=$movie->movie_name ?></td>
                             <td><?=$movie->movie_detail ?></td>
-							<td>
-								<a id="trailer<?=$movie->movie_id ?>" href=<?=$movie->movie_trailer?>>
-									<?=$movie->movie_name." trailer"?>
-								</a>
-							</td>
-							<td>
-								<?=$movie->movie_time ?>
-							</td>
-							<td>
-								<?=$movie->movie_imdb ?>
-							</td>
-							<td>
-								<?=$movie->release_year ?>
-							</td>
-							<td>
-								<?=$movie->category1_name ?>
-							</td>
                             <td>
-                                <?
+                                <a id="trailer<?=$movie->movie_id ?>" href=<?=$movie->movie_trailer?>>
+                                    <?=$movie->movie_name." trailer"?>
+                                </a>
+                            </td>
+                            <td>
+                                <?=$movie->movie_time ?>
+                            </td>
+                            <td>
+                                <?=$movie->movie_imdb ?>
+                            </td>
+                            <td>
+                                <?=$movie->release_year ?>
+                            </td>
+                            <td>
+                                <?=$movie->category1_name ?>
+                            </td>
+                            <td>
+                                <a data-toggle="modal" data-target="#exampleModal">
+                                    <?
 									if($movie->poster!="") 
 									{
-										echo "<i class='fas fa-image'></i>";
+										echo "<i class='img-icon fas fa-image'></i>";
 									}
 								?>
+                                </a>
 
-                                <img id="myImg" src="<?=base_url("$movie->poster")?>" alt="<?=$movie->poster ?>"
-                                    style="width:100%;max-width:100px"/>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+
+                                            <div class="modal-body">
+
+                                                <img id="myImg" src="<?=base_url("$movie->poster")?>"
+                                                    alt="<?=$movie->poster ?>" style="width:100%;max-width:100px" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </td>
                             <td class="td-actions text-right">
@@ -112,10 +126,10 @@
                         </tr>
                         <?php } ?>
                         <tr>
-							<td colspan="10">
-								<?=$links ?>
-							</td>
-						</tr>
+                            <td colspan="10">
+                                <?=$links ?>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
