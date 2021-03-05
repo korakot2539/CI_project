@@ -45,12 +45,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($historys as $history) {?>
+                            <?php foreach ($tickets as $ticket) {?>
                             <tr>
-                                <td class="his_body_date"><?php echo $history->history_date?></td>
-                                <td><?php echo $history->name?></td>
-                                <td><?php echo $history->history_quantity?> qty.</td>
-                                <td class="his_body_total">฿<?php echo number_format($history->history_total_price, 2) ?></td>
+                                <td class="his_body_date"><?php echo $ticket->ticket_date?></td>
+                                <td><?php echo $ticket->name?></td>
+                                <td><?php echo $ticket->ticket_quantity?> qty.</td>
+                                <td class="his_body_total">฿<?php echo number_format($ticket->ticket_total_price, 2) ?></td>
                             </tr>
                             <?php }?>
                         </tbody>
