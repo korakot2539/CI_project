@@ -13,28 +13,27 @@
         $this->db->from('movie');
 		$this->db->where('movie_id',$id);
       
-        $this->db->join('category','category.category1=movie.category_id');
+        $this->db->join('category','category.category_id=movie.category1');
  		 $query = $this->db->get();
         return $query->row(0);
 	}
-	public function getAll()
+
+	public function getAll($start=0 , $perpage=0, $keyword='')
 	{
 		
 		$this->db->select("	movie.*,
-							category1.category_name as 'category1_name',
-							category2.category_name as 'category2_name',
-							category3.category_name as 'category3_name',
+							category1.category_name as 'category1_name'
 						  ",FALSE);
         $this->db->from('movie');
-
         $this->db->join("category as category1",'category1.category_id=movie.category1');
-        $this->db->join("category as category2",'category2.category_id=movie.category2');
-        $this->db->join("category as category3",'category3.category_id=movie.category3');
 
+		if(strlen($keyword) > 0){
+            $this->db->like('movie_name', $keyword, 'both'); 
+		}
+		$this->db->limit($perpage,$start);
  		$query = $this->db->get();
       	return $query->result();
 	}
-
 	
     public function count($keyword='')
     {

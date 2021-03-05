@@ -1,106 +1,18 @@
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url() ?>assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/img/favicon.png">
+  <title>
+    Web Ticket Admin
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="<?php echo base_url() ?>assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="<?php echo base_url() ?>assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <!-- Overwrite css -->
+  <link href="<?php echo base_url() ?>assets/css/main.css" rel="stylesheet" />
 
-    <title>TNI ADMIN</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="<? echo base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="<?=base_url('assets/')?>css/sb-admin-2.min.css" rel="stylesheet">
-
-    <style>
-    body {font-family: Arial, Helvetica, sans-serif;}
-
-    #myImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    }
-
-    #myImg:hover {opacity: 0.7;}
-
-    /* The Modal (background) */
-    .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-    }
-
-    /* Modal Content (image) */
-    .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    }
-
-    /* Caption of Modal Image */
-    #caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-    }
-
-    /* Add Animation */
-    .modal-content, #caption {  
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-    }
-
-    @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
-    to {-webkit-transform:scale(1)}
-    }
-
-    @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-    }
-
-    /* The Close Button */
-    .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    }
-
-    .close:hover,
-    .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-    }
-
-    /* 100% Image Width on Smaller Screens */
-    @media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
-    }
-    </style>
+  <link href="<?php echo base_url() ?>assets/css/file-input.scss" rel="stylesheet" />

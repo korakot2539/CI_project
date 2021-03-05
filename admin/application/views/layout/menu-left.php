@@ -1,50 +1,33 @@
- <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url()?>">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fab fa-angellist"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">TNI ADMIN </div>
+<div class="sidebar" data="red">
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="javascript:void(0)" class="simple-text logo-mini">
+                
             </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="<?=base_url()?>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading pb-3">
-                Configuration
+            <div class="simple-text">
+            Manage Panel
             </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link py-2" href="<?=base_url("Movie")?>">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Movie</span>
-                </a>
-                <a class="nav-link py-2" href="<?=base_url("User")?>">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>User</span>
+        </div>
+        <ul class="nav">
+            <li class="<?php if($this->uri->segment(1)=="Movie"){echo "active";}?>">
+                <a href="<?php echo base_url('Movie') ?>">
+                    <i class="tim-icons icon-video-66"></i>
+                    <p class="leftpanel-text">Movie</p>
                 </a>
             </li>
-                    
-            
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-            
-
+            <li class="<?php if($this->uri->segment(1)=="Category"){echo "active";}?>">
+                <a href="<?php echo base_url('Category') ?>">
+                    <i class="tim-icons icon-tag"></i>
+                    <p class="leftpanel-text">Category</p>
+                </a>
+            </li>
+            <li class="<?php if($this->uri->segment(1)=="User"){echo "active";}?>">
+                <a href="<?php echo base_url('User') ?>">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p class="leftpanel-text">User</p>
+                </a>
+            </li>
         </ul>
-        <!-- End of Sidebar -->
+    </div>
+</div>

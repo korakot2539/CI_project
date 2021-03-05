@@ -14,22 +14,24 @@ class Movie_model extends CI_Model
         $this->db->join('theater b', 'b.movie_id=a.movie_id', 'left');
         $this->db->join('category c', 'c.category_id=a.category1', 'left');
         $this->db->where('a.movie_id', $id);
-
-
         $query = $this->db->get();
         return $query->row(0);
     }
 
+    public function record_count()
+    {
+        $this->db->from('movie');
+        return $this->db->count_all_results();
+    }
+
     public function getOndewithTime1($id, $time)
     {
-
         $this->db->select('*');
         $this->db->from('movie a');
         $this->db->join('theater b', 'b.movie_id=a.movie_id', 'left');
         $this->db->join('category c', 'c.category_id=a.category1', 'left');
         $this->db->where('a.movie_id', $id);
         $this->db->where('b.theater_time1', $time);
-
         $query = $this->db->get();
         return $query->row(0);
     }
@@ -45,13 +47,43 @@ class Movie_model extends CI_Model
         return $query->row(0);
     }
 
-    public function getAll()
+    public function getByCategory($category='')
+	{
+        $this->db->select("	movie.*,
+        category1.category_name as 'category1_name'",FALSE);
+        $this->db->from('movie');
+        $this->db->join("category as category1",'category1.category_id=movie.category1');
+        // $this->db->limit($perpage,$start);
+        $this->db->where('category1',$category);
+		$query = $this->db->get();
+        return $query->result();
+    }
+
+     public function getAll($start=0 , $perpage=0, $keyword='')
     {
         $this->db->select('*');
-        $this->db->from('movie a');
-        $this->db->join('theater b', 'b.movie_id=a.movie_id');
+        $this->db->from('movie');
+        $this->db->limit($perpage,$start);
+		$query = $this->db->get();
+		return $query->result();
+    }
 
-        $query = $this->db->get();
+    public function CategoryName($catename='')
+	{
+        $this->db->select("	category.*,category_name",FALSE);
+        $this->db->from('category');
+        $this->db->where('category_id',$catename);
+		$query = $this->db->get();
+        return $query->row(0);
+    }
+    public function getCheckCategory()
+	{
+        $this->db->distinct();
+        $this->db->select("movie.category1,
+        category1.category_name",FALSE);
+        $this->db->from('movie');
+        $this->db->join("category as category1",'category1.category_id=movie.category1');
+		$query = $this->db->get();
         return $query->result();
     }
 }
