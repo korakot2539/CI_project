@@ -36,6 +36,16 @@ class Movie_model extends CI_Model
         $query = $this->db->get();
         return $query->row(0);
     }
+    public function getPdf($id)
+    {
+        $this->db->select('*');
+        $this->db->from('ticket a');
+        $this->db->join('movie b', 'b.movie_id=a.product_id');
+        $this->db->where('a.ticket_id', $id);
+        $this->db->order_by("a.ticket_id", "DESC");
+        $query = $this->db->get();
+        return $query->row(0);
+    }
 
     public function getUserData($id)
     {

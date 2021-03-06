@@ -15,14 +15,18 @@
     <div class="sign section--bg" data-bg="img/section/section.jpg">
         <div class="container">
             <div class="row">
-                <div class="sign__content">
-                    <img width="150" src="<?= base_url('admin/' . $movies->poster) ?>" alt="">
+            
+                <div class="sign__content" >
                     <!-- authorization form -->
+                    
                     <div class="price price--premium">
+                    <img width="300" src="<?= base_url('admin/' . $movies->poster) ?>" alt="">
+                    <p>
                         <h4 class="content__tabs" style="color:white;"><?= $movies->movie_name ?></h4>
                         <span class="feature__text">START TIME : <?= $movies->theater_time ?></span>
                         <p class="feature__text">TOTAL TICKET : <?= $movies->total_ticket ?> TICKET</p><br>
-                        <form method="post" action="<?= base_url("Testpdf") ?>" id="my_form">
+                        <?$user_id = $this->session->userdata('ss_user_id');?>
+                        <form method="post" action="<?= base_url("Testpdf/index/$movies->ticket_id") ?>" id="my_form">
                             <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span>Download</span>
