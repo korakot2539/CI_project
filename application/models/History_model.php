@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  *
- * Model Ticket_model
+ * Model History_model
  *
  * This Model for ...
  * 
@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  */
 
-class Ticket_model extends CI_Model {
+class History_model extends CI_Model {
 
   // ------------------------------------------------------------------------
 
@@ -27,19 +27,18 @@ class Ticket_model extends CI_Model {
 
   // ------------------------------------------------------------------------
 
-  public function getHistory($id)
-  {
-      $this->db->select('*');
-      $this->db->from('ticket t');
-      $this->db->join('movie m', 'm.movie_id=t.ticket_id');
-      $this->db->where('t.user_id', $id);
-      $this->db->order_by("t.ticket_id", "DESC");
 
-      $query = $this->db->get();
-      return $query->result();
-  }
+  public function getAll()
+    {
+        $this->db->select('h.*,u.name');
+        $this->db->from('history h');
+        $this->db->join('user u','h.user_id = u.user_id');
+        
+        $query = $this->db->get();
+        return $query->result();
+    }
 
 }
 
-/* End of file Ticket_model.php */
-/* Location: ./application/models/Ticket_model.php */
+/* End of file History_model.php */
+/* Location: ./application/models/History_model.php */
