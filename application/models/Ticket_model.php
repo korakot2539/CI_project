@@ -38,6 +38,19 @@ class Ticket_model extends CI_Model {
       $query = $this->db->get();
       return $query->result();
   }
+=======
+    public function getHistory($id)
+    {
+        $this->db->select('*');
+        $this->db->from('ticket t');
+        $this->db->join('movie m', 'm.movie_id=t.ticket_id');
+        $this->db->where('t.user_id', $id);
+        $this->db->order_by("t.ticket_id", "DESC");
+
+        $query = $this->db->get();
+		    return $query->result();
+    }
+>>>>>>> origin/Tai
 
 }
 

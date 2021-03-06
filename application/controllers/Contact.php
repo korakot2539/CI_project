@@ -15,6 +15,5 @@ class Contact extends CI_Controller
 		$data['showcategorys'] = $showcategorys;
     $this->load->view('contact/contact',$data);
   }
-
 }
 

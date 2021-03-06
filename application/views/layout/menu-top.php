@@ -48,9 +48,13 @@
 								<!-- dropdown -->
 								<?php $id=$this->session->userdata('ss_user_id')?>
 								<li class="header__nav-item">
-									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome... <?=$name ?></a>
+									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$name ?></a>
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
+<<<<<<< HEAD
 										<li><a href="#">View Profile</a></li>
+=======
+										<li><a href=<?=base_url("Profile/index/$id")?>>View Profile</a></li>
+>>>>>>> origin/Tai
 										<li><a href=<?=base_url("Ticket/history/$id")?>>History</a></li>
 										<li><a href=<?=base_url("Auth/logout") ?>>Logout</a></li>
 									</ul>
