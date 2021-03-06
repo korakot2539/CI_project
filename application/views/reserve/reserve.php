@@ -3,7 +3,7 @@
 
 <head>
     <?php $this->load->view('layout/header-css.php') ?>
-
+    <link href="<?=base_url('asset/')?>home/css/addition.css">
     <title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
 
 </head>
@@ -78,61 +78,17 @@
                     </div>
                 </div>
                 <!-- end player -->
-
-                <div class=" col-16">
-                    <div class="details__wrap">
-
-                        <!-- share -->
-
-                        <div class="details__share">
-                            <span class="details__share-title">Share with friends:</span>
-
-                            <ul class="details__share-list">
-                                <li class="facebook"><a href="#"><i class="icon ion-logo-facebook"></i></a></li>
-                                <li class="instagram"><a href="#"><i class="icon ion-logo-instagram"></i></a></li>
-                                <li class="twitter"><a href="#"><i class="icon ion-logo-twitter"></i></a></li>
-                                <li class="vk"><a href="#"><i class="icon ion-logo-vk"></i></a></li>
-
-                            </ul>
-
-                        </div>
-                        <!-- end share -->
-                        <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time1") ?>" id="my_form">
-                            <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
-                                <input type="hidden" id="mylist" name="mylist">
-                                <i class="icon ion-ios-log-in"></i>
-                                <span><?= $movies->theater_time1 ?></span>
-                            </a>
-                        </form>
-
-                        <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time2") ?>" id="my_form2">
-                            <a href="javascript:{}" onclick="document.getElementById('my_form2').submit()" class="header__sign-in">
-                                <input type="hidden" id="mylist2" name="mylist">
-                                <i class="icon ion-ios-log-in"></i>
-                                <span><?= $movies->theater_time2 ?></span>
-                            </a>
-                        </form>
-
-                        <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time3") ?>" id="my_form3">
-                            <a href="javascript:{}" onclick="document.getElementById('my_form3').submit()" class="header__sign-in">
-                                <input type="hidden" id="mylist3" name="mylist">
-                                <i class="icon ion-ios-log-in"></i>
-                                <span><?= $movies->theater_time3 ?></span>
-                            </a>
-                        </form>
-
-                        <div class="col-8">
+                <div class="col-8 ticket-quan">
                             <!-- filter item -->
                             <div class="filter__item" id="filter__quality">
 
                                 <div class="filter__item-btn dropdown-toggle" role="navigation" id="filter-quality" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <input type="button" value="HOW MANY">
+                                    <input type="button" value="HOW MANY TICKET">
                                     <span></span>
                                 </div>
 
                                 <li class="header__nav-item">
-                                    <select id="drop_list" onchange="myFunction()">
-                                        <option value="1" selected>Please Choose your total ticket</option>
+                                    <select class="select-box" id="drop_list" onchange="myFunction()">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -144,6 +100,34 @@
                             <!-- end filter it
                        em -->
                         </div>
+                <div class=" col-16">
+                    <div class="details__wrap">
+
+                        <!-- share -->
+                        <!-- end share -->
+                        <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time1") ?>" id="my_form">
+                            <a  href="javascript:{}" onclick="clickSubmit('my_form')" class="first-there header__sign-in_detail">
+                                <input type="hidden" id="mylist" name="mylist">
+                                <i class="icon ion-ios-log-in"></i>
+                                <span><?= $movies->theater_time1 ?></span>
+                            </a>
+                        </form>
+
+                        <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time2") ?>" id="my_form2">
+                            <a href="javascript:{}" onclick="clickSubmit('my_form2')" class="header__sign-in_detail">
+                                <input type="hidden" id="mylist2" name="mylist">
+                                <i class="icon ion-ios-log-in"></i>
+                                <span><?= $movies->theater_time2 ?></span>
+                            </a>
+                        </form>
+
+                        <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time3") ?>" id="my_form3">
+                            <a href="javascript:{}" onclick="clickSubmit('my_form3')" class="header__sign-in_detail">
+                                <input type="hidden" id="mylist3" name="mylist">
+                                <i class="icon ion-ios-log-in"></i>
+                                <span><?= $movies->theater_time3 ?></span>
+                            </a>
+                        </form>
 
                     </div>
 
@@ -171,6 +155,13 @@
 
         function confirming() {
             confirm("Confirm Time and " + $("#drop_list option:selected").val())
+        }
+
+        function clickSubmit(clickID){
+            if (confirm("Confirm to buy a ticket?")){
+                document.getElementById(clickID).submit()
+            }
+
         }
         //var selectedValue = document.getElementById("drop_list").value;
     </script>

@@ -10,9 +10,9 @@ class Testpdf extends CI_Controller
 		$this->load->model('Movie_model');
 	}
 
-	public function index()
+	public function index($id)
 	{
-		$userData = $this->Movie_model->getUserData("3");
+		$userData = $this->Movie_model->getPdf($id);
 		$image = $userData->poster;
 		$movie_name = $userData->movie_name;
 		$time = $userData->theater_time;
@@ -23,8 +23,6 @@ class Testpdf extends CI_Controller
     	$pdf->SetFont('freeserif', '', 18, '', true);  
 		$pdf->setPrintHeader(false);
 		$pdf->setPrintFooter(false);
-
-
 
         // add a page
         $pdf->AddPage();
