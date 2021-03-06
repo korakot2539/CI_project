@@ -45,20 +45,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($historys as $history) {?>
+                            <?php foreach ($tickets as $ticket) {?>
                             <tr>
-                                <td class="his_body_date"><?php echo $history->history_date?></td>
-                                <td><?php echo $history->name?></td>
-                                <td><?php echo $history->history_quantity?> qty.</td>
-                                <td class="his_body_total">฿<?php echo number_format($history->history_total_price, 2) ?></td>
+                                <td class="his_body_date"><?php echo $ticket->timestamp?></td>
+                                <td><?php echo $ticket->movie_name?></td>
+                                <td><?php echo $ticket->total_ticket?> qty.</td>
+                                <td class="his_body_total">฿<?php echo number_format($ticket->total_price, 2) ?></td>
                             </tr>
                             <?php }?>
                         </tbody>
                     </table>
                 </div>
-
-
-        
             </div>
         </div>
     </div>
