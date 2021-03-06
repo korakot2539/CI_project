@@ -105,17 +105,17 @@
                             </a>
                         </form>
 
-                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time2") ?>" id="my_form2">
+                        <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time2") ?>" id="my_form2">
                             <a href="javascript:{}" onclick="document.getElementById('my_form2').submit()" class="header__sign-in">
-                                <input type="hidden" id="mylist2" name="mylist2">
+                                <input type="hidden" id="mylist2" name="mylist">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span><?= $movies->theater_time2 ?></span>
                             </a>
                         </form>
 
-                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time3") ?>" id="my_form3">
+                        <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time3") ?>" id="my_form3">
                             <a href="javascript:{}" onclick="document.getElementById('my_form3').submit()" class="header__sign-in">
-                                <input type="hidden" id="mylist3" name="mylist3">
+                                <input type="hidden" id="mylist3" name="mylist">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span><?= $movies->theater_time3 ?></span>
                             </a>
@@ -132,7 +132,7 @@
 
                                 <li class="header__nav-item">
                                     <select id="drop_list" onchange="myFunction()">
-                                        <option selected>Please Choose your total ticket</option>
+                                        <option value="1" selected>Please Choose your total ticket</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>

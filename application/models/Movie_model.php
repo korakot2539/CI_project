@@ -43,7 +43,7 @@ class Movie_model extends CI_Model
         $this->db->from('ticket a');
         $this->db->join('movie b', 'b.movie_id=a.product_id');
         $this->db->where('b.movie_id', $id);
-        $this->db->order_by("timestamp", "DESC");
+        $this->db->order_by("a.ticket_id", "DESC");
         $query = $this->db->get();
         return $query->row(0);
     }

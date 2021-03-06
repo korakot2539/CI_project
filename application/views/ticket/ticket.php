@@ -22,7 +22,7 @@
                         <h4 class="content__tabs" style="color:white;"><?= $movies->movie_name ?></h4>
                         <span class="feature__text">START TIME : <?= $movies->theater_time ?></span>
                         <p class="feature__text">TOTAL TICKET : <?= $movies->total_ticket ?> TICKET</p><br>
-                        <form method="post" action="<?= base_url("Ticket/html_to_pdf/$movies->movie_id/$movies->theater_time") ?>" id="my_form">
+                        <form method="post" action="<?= base_url("Testpdf") ?>" id="my_form">
                             <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span>Download</span>
