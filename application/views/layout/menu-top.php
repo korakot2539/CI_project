@@ -42,6 +42,7 @@
 							<!-- end header nav -->
 							<!-- header auth -->
 							<div class="header__auth">
+
 							<?php $name = "";
 							if($this->session->userdata('ss_user_name')!="") $name=$this->session->userdata('ss_user_name') ?>
 							<?php if($name != ""){ ?>

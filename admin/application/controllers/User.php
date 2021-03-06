@@ -13,8 +13,7 @@ class User extends CI_Controller
 
 	public function index()
 	{
-		$keyword = $this->input->get('keyword');
-		$data['keyword'] = $keyword;
+	
 		// $data['user_id'] = $user_id;
 
 
