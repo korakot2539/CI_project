@@ -1,0 +1,93 @@
+.input-group {
+    margin-top:7px
+}
+
+.search-input{
+    padding: 25px 10px !important; 
+    line-height: 50px !important;
+}
+
+::placeholder {
+	color: rgb(202, 202, 202) !important ;
+	opacity: 1; /* Firefox */
+}
+
+.search-submit-btn{
+    width: 50%;
+    height: 80%;
+}
+
+.search-submit{
+    padding-left: 0;
+}
+
+.add-btn{
+    width: 130%;
+    height: 80%;
+}
+
+.movie-name-head{
+    width: 45%;
+}
+
+.movie-poster-head{
+    width: 20%;
+}
+
+.movie-name-body {
+    color: white !important;
+}
+
+.delete-icon{
+    color: red;
+}
+
+.form-search-text{
+    color:white !important;
+}
+
+.result-count{
+    margin: auto;
+}
+
+.form-card{
+    padding-left: 15px !important;
+}
+
+.form-inp-pabel{
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+}
+
+.file-upload{
+    color:rgb(216, 216, 216) !important;
+    opacity: 1 !important;
+    margin-left: 15px;
+}
+
+.leftpanel-text{
+    font-weight: bold;
+    color: white !important;
+}
+
+.custom-pagination{
+    margin-top: 20px !important;   
+}
+.centerthing{
+    text-align: center;
+}
+
+.option-color{
+    color: black !important;
+    font-weight:600;
+}
+
+.img-icon{
+    font-size: 25px;
+}
+
+.img-sizing{
+    width:100%;
+    max-width:100px
+}

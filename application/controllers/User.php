@@ -28,7 +28,6 @@ class User extends CI_Controller
         }
         else
         {
-
             $email = $this->input->post('username');
             $pwd = $this->input->post('pwd');
 			
@@ -37,6 +36,7 @@ class User extends CI_Controller
             	$sess_data = array(
             		'user_id'=> $user->user_id,
             		'user_email'=> $user->email,
+            		'user_fullname'=> $user->name,
             		'user_name'=> $user->name,
             		'user_dt'=> date('d M Y H:i:s'),
             	);
@@ -59,5 +59,4 @@ class User extends CI_Controller
         redirect("home");
     }
 }
-
 ?>

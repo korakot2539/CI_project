@@ -75,11 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-
 	'hostname' => 'korakot.ddns.net',
 	'username' => 'korakot',
 	'password' => 'korakot2539',
-
 	'database' => 'ci_project',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -96,3 +94,4 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+

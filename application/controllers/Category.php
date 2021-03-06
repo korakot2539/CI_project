@@ -7,6 +7,7 @@ class Category extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Movie_model');
+		$this->load->model('Category_model');
 		$this->load->library('pagination');
 	}
 
@@ -15,7 +16,6 @@ class Category extends CI_Controller
 		$config['base_url'] = base_url('Category/index/');	
 		// $config['total_rows'] = $this->Movie_model->record_count();
 		// $config['per_page'] = 16;
-		
 		// bootstrap paginator
 		$config['num_tag_open'] = '<li class ="paginator__item">'; 
 		$config['num_tag_close'] = '</li>'; 
@@ -32,7 +32,6 @@ class Category extends CI_Controller
 		$config['last_tag_open'] = '<li class="paginator__item paginator__item--prev">'; 
 		$config['last_tag_close'] = '</li>';
 		// bootstrap paginator
-
 		$this->pagination->initialize($config);
 		$data['links'] = $this->pagination->create_links();
 		
@@ -46,7 +45,6 @@ class Category extends CI_Controller
 		$data['category'] = $category;
 		$data['catename'] = $catename;
 		$data['showcategorys'] = $showcategorys;
-		
 		$this->load->view('category/category', $data);
 
 	}

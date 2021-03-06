@@ -14,7 +14,7 @@
 							<!-- header nav -->
 							<ul class="header__nav">
 								<li class="header__nav-item">
-									<a class="header__nav-link" href="<?=base_url('Home')?>" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+									<a class="header__nav-link" href="<?= base_url('Home') ?>" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
 								</li>
 									
 								<!-- dropdown -->
@@ -30,7 +30,7 @@
 								<!-- end dropdown -->
 
 								<li class="header__nav-item">
-									<a class="header__nav-link" href="<?=base_url('Contact')?>" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+									<a class="header__nav-link" href="<?= base_url('Contact') ?>" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
 								</li>
 							</ul>
 							<div class="header__auth">
@@ -49,10 +49,10 @@
 								<!-- dropdown -->
 								<?php $id=$this->session->userdata('ss_user_id')?>
 								<li class="header__nav-item">
-									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome... <?=$name ?></a>
+									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$name ?></a>
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
-										<li><a href="#">View Profile</a></li>
-										<li><a href=<?=base_url("Ticket/index/$id")?>>History</a></li>
+										<li><a href=<?=base_url("Profile/index/$id")?>>View Profile</a></li>
+										<li><a href=<?=base_url("Ticket/history/$id")?>>History</a></li>
 										<li><a href=<?=base_url("Auth/logout") ?>>Logout</a></li>
 									</ul>
 								</li>
@@ -81,21 +81,22 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-- header search -->
-		<form action="#" class="header__search">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="header__search-content">
-							<input type="text" placeholder="Search for a movie, TV Series that you are looking for">
+	<!-- header search -->
+	<form action="#" class="header__search">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="header__search-content">
+						<input type="text" placeholder="Search for a movie, TV Series that you are looking for">
 
-							<button type="button">search</button>
-						</div>
+						<button type="button">search</button>
 					</div>
 				</div>
 			</div>
-		</form>
-		<!-- end header search -->
-	</header>
-	<!-- end header -->
+		</div>
+	</form>
+	<!-- end header search -->
+</header>
+<!-- end header -->

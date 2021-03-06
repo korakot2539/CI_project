@@ -55,14 +55,17 @@
                     </div>
                     <!-- end paginator -->
                 </div>
+                <!-- end paginator -->
+
             </div>
         </div>
-        <!-- end catalog -->
+    </div>
+    <!-- end catalog -->
 
 
 
-        <?php $this->load->view("layout/footer.php"); ?>
-        <?php $this->load->view("layout/footer-js.php"); ?>
+    <?php $this->load->view("layout/footer.php"); ?>
+    <?php $this->load->view("layout/footer-js.php"); ?>
 </body>
 
 </html>

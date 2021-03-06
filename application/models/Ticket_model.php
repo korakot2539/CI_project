@@ -36,7 +36,7 @@ class Ticket_model extends CI_Model {
         $this->db->order_by("t.ticket_id", "DESC");
 
         $query = $this->db->get();
-		return $query->result();
+		    return $query->result();
     }
 
 }
