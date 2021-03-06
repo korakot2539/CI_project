@@ -20,11 +20,12 @@ class Ticket extends CI_Controller
     public function insert_ticket($id, $theater)
     {
         $t = time();
-        $data['user_id'] = 1;
+        $data['user_id'] = $this->session->userdata('ss_user_id');
         $data['product_id'] = $id;
         $data['theater_time'] = $theater;
         $data['timestamp'] = date("Y-m-d h:i:s", $t);
-        $data['total_ticket'] = $this->input->post('mylist');
+        $data['total_ticket'] = $this->session->userdata('ss_total_ticket');
+        $data['total_price'] =  (int)$data['total_ticket'] * 250;
         $this->db->insert('ticket', $data);
         redirect("Ticket/ticket_details/$id/$theater");
     }
