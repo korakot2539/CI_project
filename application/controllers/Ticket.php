@@ -17,12 +17,6 @@ class Ticket extends CI_Controller
         $this->load->view('ticket/ticket');
     }
 
-    public function history($id)
-    {
-      $data['tickets'] = $this->Ticket_model->getHistory($id);
-      $this->load->view('history/history',$data);
-    }
-
     public function insert_ticket($id, $theater)
     {
         $t = time();
@@ -41,11 +35,12 @@ class Ticket extends CI_Controller
         $data['movies'] = $this->Movie_model->getUserData($id);
         $this->load->view('ticket/ticket', $data);
     }
+
     public function history($id)
     {
       $this->load->model('Movie_model');
       $showcategorys = $this->Movie_model->getCheckCategory();
-        $data['showcategorys'] = $showcategorys;
+      $data['showcategorys'] = $showcategorys;
       $data['tickets'] = $this->Ticket_model->getHistory($id);
       $this->load->view('history/history',$data);
     }

@@ -15,7 +15,7 @@
 
 
     <!-- page title -->
-    <section class="section section--first section--bg" data-bg="img/section/section.jpg">
+    <section class="section section--first section--bg" data-bg="<?php echo base_url('/asset/home/') ?>img/section/section.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-12">
