@@ -97,7 +97,7 @@
 
                         </div>
                         <!-- end share -->
-                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time1") ?>" id="my_form">
+                        <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time1") ?>" id="my_form">
                             <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
                                 <input type="hidden" id="mylist" name="mylist">
                                 <i class="icon ion-ios-log-in"></i>
@@ -105,17 +105,17 @@
                             </a>
                         </form>
 
-                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time2") ?>" id="my_form">
-                            <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
-                                <input type="hidden" id="mylist2">
+                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time2") ?>" id="my_form2">
+                            <a href="javascript:{}" onclick="document.getElementById('my_form2').submit()" class="header__sign-in">
+                                <input type="hidden" id="mylist2" name="mylist2">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span><?= $movies->theater_time2 ?></span>
                             </a>
                         </form>
 
-                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time3") ?>" id="my_form">
-                            <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
-                                <input type="hidden" id="mylist3">
+                        <form method="post" action="<?= base_url("Ticket/insert_ticket/$movies->movie_id/$movies->theater_time3") ?>" id="my_form3">
+                            <a href="javascript:{}" onclick="document.getElementById('my_form3').submit()" class="header__sign-in">
+                                <input type="hidden" id="mylist3" name="mylist3">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span><?= $movies->theater_time3 ?></span>
                             </a>
@@ -131,7 +131,7 @@
                                 </div>
 
                                 <li class="header__nav-item">
-                                    <select onchange="myFunction()">
+                                    <select id="drop_list" onchange="myFunction()">
                                         <option selected>Please Choose your total ticket</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -161,14 +161,12 @@
     <?php $this->load->view("layout/footer.php"); ?>
     <?php $this->load->view("layout/footer-js.php"); ?>
     <script>
-        $("#mylist").val(option_value);
-
         function myFunction() {
             var option_value = $("#drop_list option:selected").val();
             //alert($("#drop_list option:selected").val());
-            $('#mylist').val(option_value)
-            $('#mylist2').val(option_value)
-            $('#mylist3').val(option_value)
+            $('#mylist').val(option_value);
+            $('#mylist2').val(option_value);
+            $('#mylist3').val(option_value);
         }
 
         function confirming() {

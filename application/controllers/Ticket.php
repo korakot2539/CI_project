@@ -23,7 +23,11 @@ class Ticket extends CI_Controller
         $data['product_id'] = $id;
         $data['theater_time'] = $theater;
         $data['timestamp'] = date("Y-m-d h:i:s", $t);
-        $data['total_ticket'] = $this->input->post('mylist');
+        //$data['total_ticket'] = $this->input->post('mylist');
+        //($theater == "14:30") ? $data['total_ticket'] = $this->input->post('mylist') : '';
+        //($theater == "18:30") ? $data['total_ticket'] = $this->input->post('mylist2') : '';
+        //($theater == "20:30") ? $data['total_ticket'] = $this->input->post('mylist3') : '';
+        $data['total_ticket'] = $this->session->userdata('ss_total_ticket');
         $data['total_price'] = $data['total_ticket'] * 250;
         $this->db->insert('ticket', $data);
         redirect("Ticket/ticket_details/$id/$theater");

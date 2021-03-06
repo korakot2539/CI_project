@@ -13,6 +13,7 @@ class Movie_model extends CI_Model
         $this->db->from('movie a');
         $this->db->join('theater b', 'b.movie_id=a.movie_id', 'left');
         $this->db->join('category c', 'c.category_id=a.category1', 'left');
+        $this->db->join('theater d', 'd.movie_id=a.movie_id', 'left');
         $this->db->where('a.movie_id', $id);
         $query = $this->db->get();
         return $query->row(0);
