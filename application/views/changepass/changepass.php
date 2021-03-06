@@ -22,7 +22,7 @@
     <div class="row">
         <div class="section__wrap">
             <!-- section title -->
-            <h2 class="section__title">Profile</h2>
+            <h2 class="section__title">Change Password</h2>
             <!-- end section title -->
         </div>
     </div>
@@ -40,15 +40,18 @@
 
                 <form method="post"  enctype="multipart/form-data" class="sign__form">
 
-                    <div class="sign__group">
-                        <input type="text" class="sign__input" placeholder="Name" name="name" id="name" value="<?=$userdata->name ?>">
-                    </div>
-
-                    <div class="sign__group">
-                        <input type="text" class="sign__input" placeholder="Phone Number" name="phone" id="phone" value="<?=$userdata->phone ?>">
-                    </div>
-
                     
+                    <div class="sign__group">
+                        <input type="password" class="sign__input" placeholder="Current Password" name="old_password" id="old_password">
+                    </div>
+
+                    <div class="sign__group">
+                        <input type="password" class="sign__input" placeholder="New Password" name="new_password" id="new_password">
+                    </div>
+
+                    <div class="sign__group">
+                        <input type="password" class="sign__input" placeholder="Confirm Password" name="con_password" id="con_password">
+                    </div>
 
                     <button class="sign__btn"  type="submit">Save Changes</button>
 
