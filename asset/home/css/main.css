@@ -3269,7 +3269,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 .sign__form:before {
 	content: "";
-	position: absolute;
+	/* position: absolute; */
 	top: 0;
 	left: 0;
 	right: 0;
@@ -3435,12 +3435,12 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 @media (min-width: 360px) {
 	.sign__input {
-		width: 280px;
+		width: 500px;
 	}
 }
 @media (min-width: 768px) {
 	.sign__form {
-		padding: 50px 60px;
+		padding: 50px 500px;
 	}
 	.sign__logo {
 		margin-bottom: 50px;

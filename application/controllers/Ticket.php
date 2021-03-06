@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 
 class Ticket extends CI_Controller
 {
@@ -9,6 +8,7 @@ class Ticket extends CI_Controller
         parent::__construct();
 
         $this->load->model('Movie_model');
+        $this->load->model('Ticket_model');
         $this->load->library('pdf');
     }
 
@@ -35,45 +35,12 @@ class Ticket extends CI_Controller
         $data['movies'] = $this->Movie_model->getUserData($id);
         $this->load->view('ticket/ticket', $data);
     }
+    public function history($id)
+    {
+      $this->load->model('Movie_model');
+      $showcategorys = $this->Movie_model->getCheckCategory();
+        $data['showcategorys'] = $showcategorys;
+      $data['tickets'] = $this->Ticket_model->getHistory($id);
+      $this->load->view('history/history',$data);
+    }
 }
-=======
-defined('BASEPATH') or exit('No direct script access allowed');
-
-
-/**
- *
- * Controller Ticket
- *
- * This controller for ...
- *
- * @package   CodeIgniter
- * @category  Controller CI
- * @author    Setiawan Jodi <jodisetiawan@fisip-untirta.ac.id>
- * @author    Raul Guerrero <r.g.c@me.com>
- * @link      https://github.com/setdjod/myci-extension/
- * @param     ...
- * @return    ...
- *
- */
-
-class Ticket extends CI_Controller
-{
-    
-  public function __construct()
-  {
-    parent::__construct();
-    $this->load->model('Ticket_model');
-  }
-
-  public function index($id)
-  {
-    $data['tickets'] = $this->Ticket_model->getHistory($id);
-    $this->load->view('history/history',$data);
-  }
-
-}
-
-
-/* End of file History.php */
-/* Location: ./application/controllers/History.php */
->>>>>>> origin/Tai

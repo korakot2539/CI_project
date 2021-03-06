@@ -29,25 +29,14 @@ class Ticket_model extends CI_Model {
 
     public function getHistory($id)
     {
-<<<<<<< HEAD:application/models/History_model.php
-        $this->db->select('h.*,u.name');
-        $this->db->from('history h');
-        $this->db->join('user u','h.user_id = u.user_id');
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> origin/Tai
-=======
         $this->db->select('*');
         $this->db->from('ticket t');
         $this->db->join('movie m', 'm.movie_id=t.ticket_id');
         $this->db->where('t.user_id', $id);
         $this->db->order_by("t.ticket_id", "DESC");
 
->>>>>>> origin/Tai:application/models/Ticket_model.php
         $query = $this->db->get();
-		return $query->result();
+		    return $query->result();
     }
 
 }
