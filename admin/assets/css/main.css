@@ -84,5 +84,10 @@
 }
 
 .img-icon{
-    
+    font-size: 25px;
+}
+
+.img-sizing{
+    width:100%;
+    max-width:100px
 }
