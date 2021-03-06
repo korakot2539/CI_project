@@ -47,7 +47,10 @@
                         <tbody>
                             <?php foreach ($tickets as $ticket) {?>
                             <tr>
-                                <td class="his_body_date"><?php echo $ticket->timestamp?></td>
+                            <?php $originalDate = $ticket->timestamp; ?>
+                            <?php $newDate = date("d-m-Y", strtotime($originalDate)); ?>
+
+                                <td class="his_body_date"><?= $newDate?></td>
                                 <td><?php echo $ticket->movie_name?></td>
                                 <td><?php echo $ticket->total_ticket?> qty.</td>
                                 <td class="his_body_total">฿<?php echo number_format($ticket->total_price, 2) ?></td>
@@ -66,7 +69,7 @@
     <?php $this->load->view("layout/footer-js.php"); ?>
     <script src="<?php echo base_url('asset/home/js/date.js');?>"></script>
     <script>
-        //alert(Date.today())
+        
     </script>
 </body>
 

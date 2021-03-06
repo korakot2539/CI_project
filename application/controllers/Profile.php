@@ -13,6 +13,7 @@ class Profile extends CI_Controller
   public function index($id)
   {
 
+
 	$this->form_validation->set_rules(
 		'name', 
 		' ชื่อ ', 
@@ -124,8 +125,7 @@ class Profile extends CI_Controller
 
 
   }
-  public function edit($id){
-  }
+ 
 
 
 }
