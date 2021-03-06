@@ -50,7 +50,7 @@
                         <tr>
                             <th class="text-center">#</th>
                             <th class="movie-name-head">Movie Name</th>
-                            <th class="movie-name-head">Detail</th>
+                            <th class="movie-detail-head">Detail</th>
                             <th class="movie-name-head">Trailer</th>
                             <th class="movie-name-head">Time (Min.)</th>
                             <th class="movie-name-head">Imdb</th>
