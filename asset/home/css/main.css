@@ -3856,20 +3856,11 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .history_table .his_head {
-<<<<<<< HEAD
-  color:rgba(255,255,255,0.75);
-}
-
-.history_table .his_date {
-  width: 130px;
-  text-align: center;
-=======
 	color: rgba(255, 255, 255, 0.75);
 }
 
 .history_table .his_date {
 	width: 130px;
->>>>>>> 97acd1ba70e9f6710197c3ff9102cfe8d7ee208c
 }
 
 .history_table .his_name {
@@ -3880,31 +3871,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 	width: 150px;
 }
 
-<<<<<<< HEAD
-
-.history_table .his_total {
-  width: 90px;
-  text-align: center;
-}
-
-.history_table .his_body_total {
-  text-align: center;
-}
-
-.history_table tbody{
-  display: table-row-group;
-  vertical-align: middle;
-  border-color: inherit;
-  border-color: #fff;
-  color: #fff;
-  background-color: rgba(255,88,96,0.12)
-}
-
-.history_table .his_body_date{
-  font-size: 14px;
-  text-align: center;
-  padding:3px 0;
-=======
 .history_table tbody {
 	display: table-row-group;
 	vertical-align: middle;
@@ -3916,7 +3882,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .history_table .his_body_date {
 	font-size: 12px;
->>>>>>> 97acd1ba70e9f6710197c3ff9102cfe8d7ee208c
 }
 .ticket-quan{
 	margin-top: 10px;
@@ -3924,8 +3889,21 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .select-box{
-	min-width: 180px;
-	font-size: 24px;
+	display: block;
+    width: 30%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .select-box option{
@@ -3933,7 +3911,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 option {
-	font-size: 24px;
+	font-size: 1em;
   }
 
 .first-there{

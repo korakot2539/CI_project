@@ -5,7 +5,7 @@
     <?php $this->load->view('layout/header-css.php') ?>
     <link href="<?=base_url('asset/')?>home/css/addition.css">
     <title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
-
+    
 </head>
 
 <body class="body">
