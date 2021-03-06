@@ -5450,14 +5450,13 @@ input[type="button"].btn-block {
 .page-link {
   position: relative;
   display: block;
-  padding: 0 0.6875rem;
   margin-left: -0.0625rem;
   line-height: 3.3;
   color: #ffffff;
   background-color: transparent;
   border: 0.0625rem solid #e3e3e3;
   height: 50px;
-  width: 50px;
+  width: 65px;
   text-align: center;
 }
 
