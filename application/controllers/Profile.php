@@ -1,5 +1,5 @@
 <?php
-class User extends CI_Controller
+class Profile extends CI_Controller
 {
     function __construct() {
         parent:: __construct();    
@@ -52,12 +52,7 @@ class User extends CI_Controller
 		
 	}
 
-    public function logout()
-    {
-        $this->session->sess_destroy();
-
-        redirect("home");
-    }
+  
 }
 
 ?>

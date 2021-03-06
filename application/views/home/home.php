@@ -35,7 +35,7 @@
                     <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
                         <div class="card">
                             <div class="card__cover">
-                                <img src="<?= base_url('admin/' . $movie->poster) ?>" alt="">
+                                <img src="<?= base_url('admin/' . $movie->poster) ?>" alt="" style="height: 250px;">
                                 <a href="<?= base_url("Reserve/movie_details/$movie->movie_id") ?>" class="card__play">
                                     <i class="icon ion-ios-play"></i>
                                 </a>

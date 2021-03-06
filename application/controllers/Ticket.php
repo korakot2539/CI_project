@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  *
- * Controller History
+ * Controller Ticket
  *
  * This controller for ...
  *
@@ -18,17 +18,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
  *
  */
 
-class History extends CI_Controller
+class Ticket extends CI_Controller
 {
     
   public function __construct()
   {
     parent::__construct();
+    $this->load->model('Ticket_model');
   }
 
   public function index()
   {
-    $this->load->view('history/history');
+    $data['tickets'] = $this->Ticket_model->getAll();
+    $this->load->view('history/history',$data);
   }
 
 }

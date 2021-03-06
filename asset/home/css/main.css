@@ -3095,8 +3095,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   justify-content: center;
   align-items: flex-start;
   margin-top: 15px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding-top: 30px;
+  /* border-top: 1px solid rgba(255,255,255,0.05); */
+  padding-top: 16px;
   font-family: 'Open Sans', sans-serif;
 }
 .footer__copyright small {
@@ -3137,7 +3137,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 60px;
+    /* margin-top: 60px; */
   }
   .footer__copyright ul {
     margin-top: 0;
