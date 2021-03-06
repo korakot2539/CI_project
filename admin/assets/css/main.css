@@ -26,8 +26,12 @@
     height: 80%;
 }
 
+.movie-detail-head{
+    width: 35%;
+}
+
 .movie-name-head{
-    width: 45%;
+    width: 35%;
 }
 
 .movie-poster-head{
