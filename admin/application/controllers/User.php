@@ -14,8 +14,8 @@ class User extends CI_Controller
 	public function index()
 	{
 	
-		// $data['user_id'] = $user_id;
-
+		$keyword = $this->input->get('keyword');
+		$data['keyword'] = $keyword;
 
 		$config['base_url'] = base_url("User/index/");
 		$config['total_rows'] = $this->User_model->count($keyword);
