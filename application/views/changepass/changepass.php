@@ -17,50 +17,54 @@
 <!-- page title -->
 
 <!-- end page title -->
-<section class="section section--first section--bg">
-<div class="container">
-    <div class="row">
-        <div class="section__wrap">
-            <!-- section title -->
-            <h2 class="section__title">Change Password</h2>
-            <!-- end section title -->
+<section class="section section--first section--bg" data-bg="<?php echo base_url('/asset/home/') ?>img/section/section.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section__wrap">
+                        <!-- section title -->
+                        <h2 class="section__title">Change password</h2>
+                        <!-- end section title -->
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</section>
+    </section>
 <!-- catalog -->
 
 <!--profile-->
-
+<div class="catalog">
 <div class="container">
     <div class="row">
         <div class="col-12">
 
-            <div class="sign__content">
 
-                <form method="post"  enctype="multipart/form-data" class="sign__form">
+                <form method="post"  enctype="multipart/form-data" class="sign__form" style="padding :50px 100px 30px 100px !important;">
 
                     
-                    <div class="sign__group">
-                        <input type="password" class="sign__input" placeholder="Current Password" name="old_password" id="old_password">
+                    <div class="sign__group col-6">
+                        <label for="old_password" class="col-sm-6" style="color:white;">Current Password</label>
+                        <input type="password" class="sign__input"  name="old_password" id="old_password">
                     </div>
 
-                    <div class="sign__group">
-                        <input type="password" class="sign__input" placeholder="New Password" name="new_password" id="new_password">
+                    <div class="sign__group col-6">
+                        <label for="new_password" class="col-sm-6" style="color:white;">New password</label>
+                        <input type="password" class="sign__input"  name="new_password" id="new_password">
                     </div>
 
-                    <div class="sign__group">
-                        <input type="password" class="sign__input" placeholder="Confirm Password" name="con_password" id="con_password">
+                    <div class="sign__group col-6">
+                        <label for="con_password" class="col-sm-6" style="color:white;">Confirm new password</label>
+                        <input type="password" class="sign__input"  name="con_password" id="con_password">
                     </div>
-
-                    <button class="sign__btn"  type="submit">Save Changes</button>
-
+                    <div class="text-center col-6">
+                        <button class="sign__btn" style="width:200px" type="submit">Save Changes</button>
+                    </div>
                     <span class="sign__text"></span>
                 </form>
 
             </div>
-        </div>
     </div>
+</div>
 </div>
 </div>
 <!--end profile-->

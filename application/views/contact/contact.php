@@ -26,7 +26,7 @@
     </section>
     <!-- end page title -->
     <!-- about -->
-    <section class="section">
+    <section class="catalog" style="min-height:550px;">
         <div class="container">
             <div class="row">
                 <!-- section title -->
@@ -36,14 +36,11 @@
                 <!-- end section title -->
 
                 <!-- section text -->
-                <div class="col-12">
-                    <p class="section__text"></p>
-                    <p class="section__text">• 08-1234-5678 , 08-1234-5678 </p>
-                    <p class="section__text">• 0-2511-1111 ถึง 36 # 539 </p>
-                    <p class="section__text">• 0-25110000 </p>
-                    <p class="section__text">• Fax : 0-2444-3333 </p>
-                    <p class="section__text">• ติดตามภาพบรรยากาศความสนุกได้ที่ IG: Bob_major </p>
-                    <p class="section__text">• Facebook: Bob_major</p>
+                <div class="col-12 pl-3">
+                    <p class="section__text" style="margin-left:5em;margin-top:3em;">- Phone    : 0-25110000 </p>
+                    <p class="section__text" style="margin-left:5em;">- Fax      : 0-2444-3333 </p>
+                    <p class="section__text" style="margin-left:5em;">- IG       : Bob_major </p>
+                    <p class="section__text" style="margin-left:5em;">- Facebook : Bob_major</p>
                 </div>
                 <!-- end section text -->
 
