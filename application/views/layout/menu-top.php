@@ -42,16 +42,18 @@
 							<!-- end header nav -->
 							<!-- header auth -->
 							<div class="header__auth">
+
 							<?php $name = "";
 							if($this->session->userdata('ss_user_name')!="") $name=$this->session->userdata('ss_user_name') ?>
 							<?php if($name != ""){ ?>
 								<!-- dropdown -->
 								<?php $id=$this->session->userdata('ss_user_id')?>
 								<li class="header__nav-item">
-									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome... <?=$name ?></a>
+									<a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$name ?></a>
 									<ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
-										<li><a href="#">Chage Password</a></li>
-										<li><a href=<?=base_url("History/index/$id")?>>History</a></li>
+										<li><a href=<?=base_url("Profile/index/$id")?>>View Profile</a></li>
+										<li><a href=<?=base_url("Changepass/index/$id")?>>Change Password</a></li>
+										<li><a href=<?=base_url("Ticket/history/$id")?>>History</a></li>
 										<li><a href=<?=base_url("Auth/logout") ?>>Logout</a></li>
 									</ul>
 								</li>

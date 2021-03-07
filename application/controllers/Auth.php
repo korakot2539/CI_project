@@ -19,13 +19,14 @@ class Auth extends CI_Controller
     {
         $email = $this->input->post('email');
         $password = $this->input->post('pass');
-        
+
         if ($user = $this->User_model->checklogin($email, $password)) {
+            
             $sess_data = array(
                 'ss_user_id' => $user->user_id,
                 'ss_user_email' => $user->email,
                 'ss_user_name' => $user->name,
-                'ss_user_dt' => date('d M Y H:i:s'),
+                'ss_user_dt' => date('d M Y H:i:s')
             );
             $this->session->set_userdata($sess_data);
             if (isset($_SESSION['ss_movie_id'])){

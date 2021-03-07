@@ -6,8 +6,9 @@ class Ticket extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
+        $this->load->model('Ticket_model');
         $this->load->model('Movie_model');
+        $this->load->model('Ticket_model');
         $this->load->library('pdf');
     }
 
@@ -33,5 +34,14 @@ class Ticket extends CI_Controller
     {
         $data['movies'] = $this->Movie_model->getUserData($id);
         $this->load->view('ticket/ticket', $data);
+    }
+
+    public function history($id)
+    {
+      $this->load->model('Movie_model');
+      $showcategorys = $this->Movie_model->getCheckCategory();
+      $data['showcategorys'] = $showcategorys;
+      $data['tickets'] = $this->Ticket_model->getHistory($id);
+      $this->load->view('history/history',$data);
     }
 }

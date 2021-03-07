@@ -5450,14 +5450,13 @@ input[type="button"].btn-block {
 .page-link {
   position: relative;
   display: block;
-  padding: 0 0.6875rem;
   margin-left: -0.0625rem;
   line-height: 3.3;
   color: #ffffff;
   background-color: transparent;
   border: 0.0625rem solid #e3e3e3;
   height: 50px;
-  width: 50px;
+  width: 65px;
   text-align: center;
 }
 
@@ -6578,11 +6577,11 @@ a.close.disabled {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   background-clip: padding-box;
   border: 1px solid rgba(34, 42, 66, 0.2);
   border-radius: 0.2857rem;
-  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.5); */
   outline: 0;
 }
 
@@ -6628,6 +6627,7 @@ a.close.disabled {
   position: relative;
   flex: 1 1 auto;
   padding: 24px 24px 16px 24px;
+  text-align: center;
 }
 
 .modal-footer {
@@ -6679,7 +6679,9 @@ a.close.disabled {
   }
 
   .modal-content {
-    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.2), 0 5px 15px rgba(0, 0, 0, 0.17);
+    /* box-shadow: 0 15px 35px  */
+    /* rgba(50, 50, 93, 0.2),  */
+    /* 0 5px 15px rgba(0, 0, 0, 0.17); */
   }
 
   .modal-sm {
