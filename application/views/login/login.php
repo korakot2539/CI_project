@@ -58,15 +58,7 @@
                     </div>                                  
                 <?php } ?>
 
-                <div class="text-center p-t-50">
-                    <span class="txt1">
-                        Don’t have an account?
-                    </span>
 
-                    <a class="txt2" href="<?php echo base_url('Auth/registerForm')?>">
-                        Sign Up
-                    </a>
-                </div>
 				<?php echo form_close(); ?>
 
         </div>

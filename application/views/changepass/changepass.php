@@ -36,20 +36,23 @@
     <div class="row">
         <div class="col-12">
 
-            <div class="sign__content">
+            <div class="custom-sign sign__content">
 
-                <form method="post"  enctype="multipart/form-data" class="sign__form">
+                <form method="post"  enctype="multipart/form-data" class="signform-custon sign__form">
 
                     
                     <div class="sign__group">
+                        <label class="custom-label" for="old_password">Current Password</label>
                         <input type="password" class="sign__input" placeholder="Current Password" name="old_password" id="old_password">
                     </div>
 
                     <div class="sign__group">
+                        <label class="custom-label" for="new_password">New Password</label>
                         <input type="password" class="sign__input" placeholder="New Password" name="new_password" id="new_password">
                     </div>
 
                     <div class="sign__group">
+                    <label class="custom-label" for="con_password">Confirm Password</label>
                         <input type="password" class="sign__input" placeholder="Confirm Password" name="con_password" id="con_password">
                     </div>
 

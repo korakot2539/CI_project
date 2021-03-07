@@ -1951,6 +1951,7 @@ ul {
 	Price
 ==============================*/
 .price {
+	margin-top:100px !important;
 	display: flex;
 	flex-direction: column;
 	min-width: 500px;
@@ -3307,6 +3308,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 	letter-spacing: 0.2px;
 	font-family: "Open Sans", sans-serif;
 }
+
+
 .sign__group {
 	position: relative;
 	margin-bottom: 20px;
@@ -3869,3 +3872,21 @@ option {
 .first-there{
 	margin-left:14px !important;
 }
+
+.ticket-img{
+	border: 1px solid #ff55a5;
+}
+.signform-custon{
+	padding: 50px 200px !important;
+
+}
+
+.custom-sign{
+	min-height: 10vh;
+}
+
+.custom-label{
+	color:white;
+	display:block;
+}
+

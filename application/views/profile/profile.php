@@ -36,15 +36,17 @@
     <div class="row">
         <div class="col-12">
 
-            <div class="sign__content">
+            <div class=" custom-sign sign__content">
 
-                <form method="post"  enctype="multipart/form-data" class="sign__form">
+                <form method="post"  enctype="multipart/form-data" class=" signform-custon sign__form">
 
                     <div class="sign__group">
+                    <label class="custom-label" for="name">Name</label>
                         <input type="text" class="sign__input" placeholder="Name" name="name" id="name" value="<?=$userdata->name ?>">
                     </div>
 
                     <div class="sign__group">
+                    <label class="custom-label" for="phone">Phone Number</label>
                         <input type="text" class="sign__input" placeholder="Phone Number" name="phone" id="phone" value="<?=$userdata->phone ?>">
                     </div>
 
