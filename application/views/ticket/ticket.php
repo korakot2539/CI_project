@@ -20,16 +20,16 @@
                     <!-- authorization form -->
                     
                     <div class="price price--premium">
-                    <img class="ticket-img" width="200px" src="<?= base_url('admin/' . $movies->poster) ?>" alt="">
+                    <img width="300" src="<?= base_url('admin/' . $movies->poster) ?>" alt="">
                     <p>
                         <h4 class="content__tabs" style="color:white;"><?= $movies->movie_name ?></h4>
                         <span class="feature__text">START TIME : <?= $movies->theater_time ?></span>
                         <p class="feature__text">TOTAL TICKET : <?= $movies->total_ticket ?> TICKET</p><br>
                         <?$user_id = $this->session->userdata('ss_user_id');?>
-                        <form method="post" action="<?= base_url("PDFgenerate/index/$movies->ticket_id") ?>" id="my_form">
+                        <form method="post" action="<?= base_url("Testpdf/index/$movies->ticket_id") ?>" id="my_form">
                             <a href="javascript:{}" onclick="document.getElementById('my_form').submit()" class="header__sign-in">
                                 <i class="icon ion-ios-log-in"></i>
-                                <span>Get ticket</span>
+                                <span>Download</span>
                             </a>
                         </form>
                     </div>

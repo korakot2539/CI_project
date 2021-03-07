@@ -5,7 +5,7 @@
     <?php $this->load->view('layout/header-css.php') ?>
     <link href="<?=base_url('asset/')?>home/css/addition.css">
     <title>FlixGo – Online Movies, TV Shows & Cinema HTML Template</title>
-    
+
 </head>
 
 <body class="body">
@@ -107,7 +107,7 @@
                         <!-- end share -->
                         <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time1") ?>" id="my_form">
                             <a  href="javascript:{}" onclick="clickSubmit('my_form')" class="first-there header__sign-in_detail">
-                                <input type="hidden" id="mylist" name="mylist" value="1">
+                                <input type="hidden" id="mylist" name="mylist">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span><?= $movies->theater_time1 ?></span>
                             </a>
@@ -115,7 +115,7 @@
 
                         <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time2") ?>" id="my_form2">
                             <a href="javascript:{}" onclick="clickSubmit('my_form2')" class="header__sign-in_detail">
-                                <input type="hidden" id="mylist2" name="mylist" value="1">
+                                <input type="hidden" id="mylist2" name="mylist">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span><?= $movies->theater_time2 ?></span>
                             </a>
@@ -123,7 +123,7 @@
 
                         <form method="post" action="<?= base_url("Auth/loginWithOrder/$movies->movie_id/$movies->theater_time3") ?>" id="my_form3">
                             <a href="javascript:{}" onclick="clickSubmit('my_form3')" class="header__sign-in_detail">
-                                <input type="hidden" id="mylist3" name="mylist" value="1">
+                                <input type="hidden" id="mylist3" name="mylist">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span><?= $movies->theater_time3 ?></span>
                             </a>

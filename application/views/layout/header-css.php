@@ -35,6 +35,7 @@
     <link href="<?=base_url('asset/')?>home/css/default-skin.css">
     <link href="<?=base_url('asset/')?>home/css/main.css">
 
+
     <!-- Favicons -->
     <link href="<?=base_url('asset/')?>home/icon/favicon-32x32.png">
     <link href="<?=base_url('asset/')?>home/icon/favicon-32x32.png">
