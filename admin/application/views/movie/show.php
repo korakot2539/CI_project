@@ -63,7 +63,7 @@
                     <tbody>
                         <?php foreach ($movies as $key => $movie) {  ?>
                         <tr>
-                            <td class="text-center"><?= $key+1 ?></td>
+                            <td class="text-center"><?= $movie->movie_id ?></td>
                             <td class="movie-name-body"><?=$movie->movie_name ?></td>
                             <td><?=$movie->movie_detail ?></td>
                             <td>

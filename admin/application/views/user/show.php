@@ -52,13 +52,13 @@
                                 <th>Email</th>
                                 <th>Name</th>
                                 <th>Phone</th>
-								<th class="text-right">Actions</th>
+				<th class="text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($users as $key => $user) { ?>
                             <tr>
-                                <td><?=$key+1 ?></td>
+                                <td><?=$user->user_id ?></td>
                                 <td class="movie-name-body"><?=$user->email ?></td>
                                 <td class="movie-name-body"><?=$user->name ?></td>
                                 <td><?=$user->phone ?></td>
@@ -79,7 +79,7 @@
                             </tr>
                             <?php } ?>
                             <tr>
-                                <td colspan="4">
+                                <td colspan="5">
                                     <?=$links ?>
                                 </td>
                             </tr>

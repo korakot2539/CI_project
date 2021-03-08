@@ -5,8 +5,6 @@ class PDFgenerate extends CI_Controller
 
     function __construct()
     {
-        function __construct()
-	{
 		parent::__construct();
 		$this->load->library('Domlib');
 		$this->load->model('Movie_model');
@@ -48,5 +46,5 @@ class PDFgenerate extends CI_Controller
 		$dompdf->stream("ticket.pdf", array("Attachment" => false));
 		
 	}
-    }
+    
 }

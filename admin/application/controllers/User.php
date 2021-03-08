@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 
 class User extends CI_Controller
 {
@@ -31,7 +31,7 @@ class User extends CI_Controller
 		$users  = $this->User_model->getAll($start, $config['per_page'] ,$keyword);
 		$data['total_rows'] = $config['total_rows'];
 		$data['users'] = $users;
-		$data['content'] = "User/show";
+		$data['content'] = "user/show";
 		$this->load->view("layout/main",$data);
 	}
 

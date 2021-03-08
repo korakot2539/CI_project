@@ -56,7 +56,7 @@
                         <tbody>
                             <?php foreach ($categories as $key => $category) { ?>
                             <tr>
-                                <td><?=$key+1 ?></td>
+                                <td><?=$category->category_id ?></td>
                                 <td class="movie-name-body"><?=$category->category_name ?></td>
 								<td class="td-actions text-right">
                                 <a href="<?=base_url("Category/edit/$category->category_id")?>">
