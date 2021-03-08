@@ -57,7 +57,7 @@
                         <input type="password" class="sign__input"  name="con_password" id="con_password">
                     </div>
                     <div class="text-center col-6">
-                        <button class="sign__btn" style="width:200px" type="submit">Save Changes</button>
+                        <button onclick="return confirm('คุณต้องการเปลี่ยนรหัสผ่าน?')" id="save" class="sign__btn" style="width:200px" type="submit">Save Changes</button>
                     </div>
                     <span class="sign__text"></span>
                 </form>
@@ -75,9 +75,6 @@
 <?php $this->load->view("layout/footer.php"); ?>
 <?php $this->load->view("layout/footer-js.php"); ?>
 <script src="<?php echo base_url('asset/home/js/date.js'); ?>"></script>
-<script>
-    //alert(Date.today())
-</script>
 </body>
 
 </html>

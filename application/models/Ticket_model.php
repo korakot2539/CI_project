@@ -31,7 +31,7 @@ class Ticket_model extends CI_Model {
   {
       $this->db->select('*');
       $this->db->from('ticket t');
-      $this->db->join('movie m', 'm.movie_id=t.ticket_id');
+      $this->db->join('movie m', 'm.movie_id=t.product_id');
       $this->db->where('t.user_id', $id);
       $this->db->order_by("t.ticket_id", "DESC");
 
